@@ -2,7 +2,7 @@ import PageContainer from '@/components/layout/page-container';
 import DemoForm from '@/components/forms/demo-form';
 
 export const metadata = {
-  title: 'Dashboard: Basic Form'
+  title: 'SecQA — New Answer'
 };
 
 export default function Page() {
