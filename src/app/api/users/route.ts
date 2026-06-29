@@ -1,4 +1,7 @@
 // ============================================================
+
+export const runtime = "nodejs";
+
 // Route Handler — Users (list + create)
 // ============================================================
 // Used with Pattern 2 (Route Handlers + ORM) or Pattern 3 (BFF).

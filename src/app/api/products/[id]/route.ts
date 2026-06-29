@@ -1,4 +1,7 @@
 // ============================================================
+
+export const runtime = "nodejs";
+
 // Route Handler — Single Product (get + update)
 // ============================================================
 // See src/app/api/products/route.ts for pattern documentation.

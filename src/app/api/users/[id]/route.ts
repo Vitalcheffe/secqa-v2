@@ -1,4 +1,7 @@
 // ============================================================
+
+export const runtime = "nodejs";
+
 // Route Handler — Single User (update + delete)
 // ============================================================
 // See src/app/api/users/route.ts for pattern documentation.
