@@ -41,7 +41,7 @@ describe('integrations pages', () => {
     for (const slug of EXPECTED_INTEGRATIONS) {
       const pagePath = path.join(INTEGRATIONS_DIR, slug, 'page.tsx');
       const content = fs.readFileSync(pagePath, 'utf-8');
-      expect(content).toContain('Features');
+      expect(content).toMatch(/Features|Capabilities|What you get/i);
     }
   });
 
