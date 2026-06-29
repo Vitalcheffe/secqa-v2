@@ -4,6 +4,12 @@ import React from 'react';
 import { ActiveThemeProvider } from '../themes/active-theme';
 import QueryProvider from './query-provider';
 
+// Check if Clerk is configured (client-side check on publishable key)
+const isClerkConfigured = Boolean(
+  process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY &&
+  process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY.length > 10
+);
+
 export default function Providers({
   activeThemeValue,
   children
@@ -12,8 +18,8 @@ export default function Providers({
   children: React.ReactNode;
 }) {
   return (
-    <>
-      <ActiveThemeProvider initialTheme={activeThemeValue}>
+    <ActiveThemeProvider initialTheme={activeThemeValue}>
+      {isClerkConfigured ? (
         <ClerkProvider
           appearance={{
             variables: {
@@ -34,7 +40,11 @@ export default function Providers({
         >
           <QueryProvider>{children}</QueryProvider>
         </ClerkProvider>
-      </ActiveThemeProvider>
-    </>
+      ) : (
+        // Clerk not configured — render without auth provider
+        // Marketing pages work; /dashboard will redirect to sign-in
+        <QueryProvider>{children}</QueryProvider>
+      )}
+    </ActiveThemeProvider>
   );
 }
