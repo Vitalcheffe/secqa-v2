@@ -1,0 +1,107 @@
+// Prisma schema for SecQA v2
+// Run: npx prisma db push to sync schema with database
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Questionnaire {
+  id          String       @id @default(cuid())
+  customerId  String
+  uploadedAt  DateTime     @default(now())
+  status      String       @default("uploaded") // uploaded | parsed | generating | completed
+  rawText     String
+  parsedJson  String?
+  fileName    String?
+  questions   Question[]
+  exports     Export[]
+
+  @@index([customerId])
+}
+
+model Question {
+  id               String        @id @default(cuid())
+  questionnaireId  String
+  questionText     String
+  answerText       String?
+  sourceAnswerId   String?
+  confidenceScore  Float         @default(0)
+  status           String        @default("pending") // pending | draft | approved | rejected
+  questionnaire    Questionnaire @relation(fields: [questionnaireId], references: [id], onDelete: Cascade)
+
+  @@index([questionnaireId])
+}
+
+model Answer {
+  id              String   @id @default(cuid())
+  customerId      String
+  questionPattern String
+  answerText      String
+  tags            String?
+  embedding       String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  usageCount      Int      @default(0)
+
+  @@index([customerId])
+  @@index([questionPattern])
+}
+
+model Export {
+  id               String        @id @default(cuid())
+  questionnaireId  String
+  format           String // pdf | docx | csv
+  fileUrl          String
+  createdAt        DateTime      @default(now())
+  questionnaire    Questionnaire @relation(fields: [questionnaireId], references: [id], onDelete: Cascade)
+
+  @@index([questionnaireId])
+}
+
+// Day 8 additions: Stripe billing models
+
+model Customer {
+  id              String         @id @default(cuid())
+  stripeCustomerId String       @unique
+  email           String
+  name            String?
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+  subscriptions   Subscription[]
+  invoices        Invoice[]
+
+  @@index([email])
+}
+
+model Subscription {
+  id                  String   @id @default(cuid())
+  customerId          String
+  stripeSubscriptionId String @unique
+  tier                String // starter | pro | scale
+  status              String // active | past_due | canceled | trialing
+  currentPeriodEnd    DateTime
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  customer            Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+
+  @@index([customerId])
+  @@index([status])
+}
+
+model Invoice {
+  id              String   @id @default(cuid())
+  customerId      String
+  stripeInvoiceId String   @unique
+  amount          Int // in cents
+  status          String // draft | open | paid | uncollectible | void
+  createdAt       DateTime @default(now())
+  customer        Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+
+  @@index([customerId])
+  @@index([status])
+}
