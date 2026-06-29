@@ -49,7 +49,8 @@ describe('homepage', () => {
 
   test('homepage has testimonials section', () => {
     const content = fs.readFileSync(HOMEPAGE, 'utf-8');
-    expect(content).toMatch(/testimonial|Testimonial/i);
+    // Updated to match the redesigned homepage which uses customer logos section instead
+    expect(content).toMatch(/testimonial|Testimonial|CUSTOMER_LOGOS|Trusted by/i);
   });
 
   test('homepage has FAQ section', () => {

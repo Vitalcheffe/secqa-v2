@@ -24,11 +24,13 @@ describe('theme configuration', () => {
     expect(content).toContain("value: 'secqa'");
   });
 
-  test('secqa theme uses emerald primary color', () => {
+  test('secqa theme uses locked accent color #00ADB5', () => {
     const content = fs.readFileSync(path.join(THEME_DIR, 'secqa.css'), 'utf-8');
-    // Emerald HSL is around 160, 84%, 39%
-    expect(content).toContain('160');
-    expect(content).toMatch(/84%|39%/);
+    // Locked palette: #00ADB5 (teal accent)
+    expect(content).toContain('#00ADB5');
+    expect(content).toContain('#222831');
+    expect(content).toContain('#393E46');
+    expect(content).toContain('#EEEEEE');
   });
 
   test('secqa theme has dark mode variant', () => {

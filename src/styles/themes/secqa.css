@@ -1,102 +1,98 @@
-/* SecQA Theme — Emerald + Slate (security/trust palette) */
-/* Based on the existing theme structure but rebranded for SecQA */
+/* SecQA Theme — Locked 4-color palette */
+/* #EEEEEE (light bg) | #222831 (dark surface) | #393E46 (cards) | #00ADB5 (accent) */
 
 [data-theme='secqa'] {
-  /* Background — clean slate for trust */
-  --background: hsl(210 40% 98%);
+  /* Background — light page */
+  --background: #EEEEEE;
 
-  /* Foreground — dark slate for readability */
-  --foreground: hsl(215 28% 17%);
+  /* Foreground — dark text on light */
+  --foreground: #222831;
 
-  /* Card — pure white for content surfaces */
-  --card: hsl(0 0% 100%);
-  --card-foreground: hsl(215 28% 17%);
+  /* Card — secondary surfaces */
+  --card: #393E46;
+  --card-foreground: #EEEEEE;
 
-  /* Popover — for dropdowns/modals */
-  --popover: hsl(0 0% 100%);
-  --popover-foreground: hsl(215 28% 17%);
+  /* Popover */
+  --popover: #222831;
+  --popover-foreground: #EEEEEE;
 
-  /* Primary — emerald (brand color, signals security/growth) */
-  --primary: hsl(160 84% 39%);
-  --primary-foreground: hsl(0 0% 100%);
+  /* Primary — accent teal */
+  --primary: #00ADB5;
+  --primary-foreground: #EEEEEE;
 
-  /* Secondary — muted slate */
-  --secondary: hsl(210 40% 96%);
-  --secondary-foreground: hsl(215 28% 17%);
+  /* Secondary — mid surface */
+  --secondary: #393E46;
+  --secondary-foreground: #EEEEEE;
 
-  /* Muted — for subtle backgrounds */
-  --muted: hsl(210 40% 96%);
-  --muted-foreground: hsl(215 16% 47%);
+  /* Muted */
+  --muted: #393E46;
+  --muted-foreground: rgba(238, 238, 238, 0.7);
 
-  /* Accent — light emerald for highlights */
-  --accent: hsl(160 84% 94%);
-  --accent-foreground: hsl(215 28% 17%);
+  /* Accent */
+  --accent: #00ADB5;
+  --accent-foreground: #EEEEEE;
 
-  /* Destructive — red for errors */
-  --destructive: hsl(0 84% 60%);
-  --destructive-foreground: hsl(0 0% 100%);
+  /* Destructive — keep red for errors but muted */
+  --destructive: #c53030;
+  --destructive-foreground: #EEEEEE;
 
-  /* Border — subtle slate */
-  --border: hsl(214 32% 91%);
+  /* Border — subtle dark on light, subtle light on dark */
+  --border: rgba(34, 40, 49, 0.12);
+  --input: rgba(34, 40, 49, 0.16);
+  --ring: #00ADB5;
 
-  /* Input — slightly darker border */
-  --input: hsl(214 32% 88%);
-
-  /* Ring — emerald focus ring */
-  --ring: hsl(160 84% 39%);
-
-  /* Charts — emerald family + complementary */
-  --chart-1: hsl(160 84% 39%);
-  --chart-2: hsl(200 80% 50%);
-  --chart-3: hsl(280 65% 60%);
-  --chart-4: hsl(340 75% 55%);
-  --chart-5: hsl(45 93% 47%);
+  /* Charts — accent + surface variants only */
+  --chart-1: #00ADB5;
+  --chart-2: #222831;
+  --chart-3: #393E46;
+  --chart-4: rgba(0, 173, 181, 0.6);
+  --chart-5: rgba(238, 238, 238, 0.4);
 
   /* Sidebar */
-  --sidebar: hsl(210 40% 98%);
-  --sidebar-foreground: hsl(215 28% 17%);
-  --sidebar-primary: hsl(160 84% 39%);
-  --sidebar-primary-foreground: hsl(0 0% 100%);
-  --sidebar-accent: hsl(210 40% 96%);
-  --sidebar-accent-foreground: hsl(215 28% 17%);
-  --sidebar-border: hsl(214 32% 91%);
-  --sidebar-ring: hsl(160 84% 39%);
+  --sidebar: #222831;
+  --sidebar-foreground: #EEEEEE;
+  --sidebar-primary: #00ADB5;
+  --sidebar-primary-foreground: #EEEEEE;
+  --sidebar-accent: #393E46;
+  --sidebar-accent-foreground: #EEEEEE;
+  --sidebar-border: rgba(238, 238, 238, 0.1);
+  --sidebar-ring: #00ADB5;
 
   /* Font */
   --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
-  --font-serif: 'Georgia', serif;
+  --font-mono: ui-monospace, monospace;
+  --font-serif: Georgia, serif;
 
   /* Radius */
   --radius: 0.5rem;
 }
 
 [data-theme='secqa'].dark {
-  --background: hsl(215 28% 9%);
-  --foreground: hsl(210 40% 98%);
-  --card: hsl(215 28% 12%);
-  --card-foreground: hsl(210 40% 98%);
-  --popover: hsl(215 28% 12%);
-  --popover-foreground: hsl(210 40% 98%);
-  --primary: hsl(160 84% 45%);
-  --primary-foreground: hsl(215 28% 9%);
-  --secondary: hsl(215 28% 17%);
-  --secondary-foreground: hsl(210 40% 98%);
-  --muted: hsl(215 28% 17%);
-  --muted-foreground: hsl(215 16% 65%);
-  --accent: hsl(160 84% 20%);
-  --accent-foreground: hsl(210 40% 98%);
-  --destructive: hsl(0 70% 50%);
-  --destructive-foreground: hsl(0 0% 100%);
-  --border: hsl(215 28% 20%);
-  --input: hsl(215 28% 22%);
-  --ring: hsl(160 84% 45%);
-  --sidebar: hsl(215 28% 9%);
-  --sidebar-foreground: hsl(210 40% 98%);
-  --sidebar-primary: hsl(160 84% 45%);
-  --sidebar-primary-foreground: hsl(215 28% 9%);
-  --sidebar-accent: hsl(215 28% 17%);
-  --sidebar-accent-foreground: hsl(210 40% 98%);
-  --sidebar-border: hsl(215 28% 20%);
-  --sidebar-ring: hsl(160 84% 45%);
+  --background: #222831;
+  --foreground: #EEEEEE;
+  --card: #393E46;
+  --card-foreground: #EEEEEE;
+  --popover: #393E46;
+  --popover-foreground: #EEEEEE;
+  --primary: #00ADB5;
+  --primary-foreground: #EEEEEE;
+  --secondary: #393E46;
+  --secondary-foreground: #EEEEEE;
+  --muted: #393E46;
+  --muted-foreground: rgba(238, 238, 238, 0.7);
+  --accent: #00ADB5;
+  --accent-foreground: #EEEEEE;
+  --destructive: #e53e3e;
+  --destructive-foreground: #EEEEEE;
+  --border: rgba(238, 238, 238, 0.12);
+  --input: rgba(238, 238, 238, 0.16);
+  --ring: #00ADB5;
+  --sidebar: #222831;
+  --sidebar-foreground: #EEEEEE;
+  --sidebar-primary: #00ADB5;
+  --sidebar-primary-foreground: #EEEEEE;
+  --sidebar-accent: #393E46;
+  --sidebar-accent-foreground: #EEEEEE;
+  --sidebar-border: rgba(238, 238, 238, 0.1);
+  --sidebar-ring: #00ADB5;
 }
