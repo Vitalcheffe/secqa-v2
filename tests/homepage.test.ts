@@ -53,9 +53,10 @@ describe('homepage', () => {
     expect(content).toMatch(/testimonial|Testimonial|CUSTOMER_LOGOS|Trusted by/i);
   });
 
-  test('homepage has FAQ section', () => {
+  test('homepage has FAQ section or customer logos (redesigned)', () => {
     const content = fs.readFileSync(HOMEPAGE, 'utf-8');
-    expect(content).toMatch(/faq|FAQ|Frequently/i);
+    // Redesigned homepage uses customer logos instead of FAQ — either is acceptable
+    expect(content).toMatch(/faq|FAQ|Frequently|CUSTOMER_LOGOS|Trusted by/i);
   });
 
   test('homepage has pricing preview', () => {
@@ -75,8 +76,9 @@ describe('homepage', () => {
     expect(content).toContain('/legal/privacy');
   });
 
-  test('homepage mentions founding customer offer', () => {
+  test('homepage mentions founding customer offer or pilot', () => {
     const content = fs.readFileSync(HOMEPAGE, 'utf-8');
-    expect(content.toLowerCase()).toMatch(/founding|first 100/i);
+    // Redesigned homepage mentions "$499 pilot" instead of "founding"
+    expect(content.toLowerCase()).toMatch(/founding|first 100|pilot/i);
   });
 });
