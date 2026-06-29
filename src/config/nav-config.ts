@@ -83,7 +83,7 @@ export const navGroups: NavGroup[] = [
       },
       {
         title: 'Analytics',
-        url: '/dashboard/react-query',
+        url: '/dashboard/analytics',
         icon: 'dashboard',
         isActive: false,
         items: []
