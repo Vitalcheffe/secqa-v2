@@ -1,6 +1,69 @@
+# Dependencies
 node_modules/
+.pnp
+.pnp.js
+
+# Next.js build output
 .next/
-.env.local
+out/
+build/
+dist/
+
+# Production
+*.tsbuildinfo
+next-env.d.ts
+
+# Environment files (NEVER commit these)
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.production
+
+# Database
+*.db
+*.db-journal
+dev.db
+prisma/dev.db
+
+# Generated exports (runtime artifacts)
+exports/
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel
+
+# Sentry
+.sentryclirc
+
+# Stripe (local webhook secret, etc.)
+stripe-secret.json
+
+# Logs
+logs/
 *.log
-.vercel/
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Temp files
+*.tmp
+*.bak
