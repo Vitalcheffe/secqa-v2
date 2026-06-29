@@ -2,66 +2,75 @@ import { Shield, Lock, FileText, Server, Key, ScrollText } from 'lucide-react';
 
 export const metadata = {
   title: 'Trust Center — SecQA security and compliance',
-  description: 'Public trust center for SecQA. Security architecture, compliance status, data handling, and sub-processors.'
+  description: 'Public trust center for SecQA. Security architecture, compliance status, data handling.'
 };
 
-const SECURITY_CONTROLS = [
-  { icon: Lock, title: 'Encryption at rest', desc: 'AES-256 on all customer data. KMS-managed keys with 90-day automatic rotation.', status: 'Active' },
-  { icon: Shield, title: 'Encryption in transit', desc: 'TLS 1.3 enforced. HSTS enabled. Legacy protocols (TLS 1.0/1.1) disabled.', status: 'Active' },
-  { icon: Server, title: 'Single-tenant Postgres', desc: 'Per-customer database isolation. No shared schemas. Row-level security available on Scale tier.', status: 'Active' },
-  { icon: Key, title: 'Key management', desc: 'AWS KMS with customer-specific master keys. CMK rotation every 90 days. No plaintext key storage.', status: 'Active' },
-  { icon: ScrollText, title: 'Audit logging', desc: 'Every database query logged. Every API call logged. Logs retained 1 year. Available to customers on request.', status: 'Active' },
-  { icon: FileText, title: 'SOC2 Type 2', desc: 'In progress with Vanta. Estimated completion Q1 2027. Current evidence pack available under NDA.', status: 'In Progress' }
+const CONTROLS = [
+  { icon: Lock, t: 'Encryption at rest', d: 'AES-256 on all customer data. KMS-managed keys with 90-day automatic rotation.', s: 'Active' },
+  { icon: Shield, t: 'Encryption in transit', d: 'TLS 1.3 enforced. HSTS enabled. Legacy protocols (TLS 1.0/1.1) disabled.', s: 'Active' },
+  { icon: Server, t: 'Single-tenant Postgres', d: 'Per-customer database isolation. No shared schemas. Row-level security on Scale tier.', s: 'Active' },
+  { icon: Key, t: 'Key management', d: 'AWS KMS with customer-specific master keys. CMK rotation every 90 days.', s: 'Active' },
+  { icon: ScrollText, t: 'Audit logging', d: 'Every database query logged. Logs retained 1 year. Tamper-evident storage.', s: 'Active' },
+  { icon: FileText, t: 'SOC2 Type 2', d: 'In progress with Vanta. Estimated completion Q1 2027.', s: 'In Progress' }
 ];
 
 const SUB_PROCESSORS = [
-  { name: 'Anthropic', purpose: 'Claude 3.5 Haiku API for answer generation', location: 'US', dpa: 'Signed — zero data retention' },
-  { name: 'AWS', purpose: 'Hosting infrastructure (S3, KMS)', location: 'us-east-1', dpa: 'Inherited SOC2, ISO 27001, FedRAMP' },
-  { name: 'Supabase', purpose: 'Postgres database hosting', location: 'us-east-1', dpa: 'Signed — SOC2 Type 2 attested' },
-  { name: 'Stripe', purpose: 'Payment processing', location: 'US', dpa: 'Inherited PCI DSS Level 1' },
-  { name: 'Vercel', purpose: 'Application hosting and CDN', location: 'Global edge', dpa: 'Signed — SOC2 Type 2' },
-  { name: 'Sentry', purpose: 'Error monitoring', location: 'US/EU', dpa: 'Signed — GDPR compliant' }
+  { name: 'Anthropic', purpose: 'Claude 3.5 Haiku API', location: 'US', dpa: 'Zero data retention' },
+  { name: 'AWS', purpose: 'S3, KMS', location: 'us-east-1', dpa: 'SOC2, ISO 27001, FedRAMP' },
+  { name: 'Supabase', purpose: 'Postgres hosting', location: 'us-east-1', dpa: 'SOC2 Type 2' },
+  { name: 'Stripe', purpose: 'Payment processing', location: 'US', dpa: 'PCI DSS Level 1' },
+  { name: 'Vercel', purpose: 'App hosting + CDN', location: 'Global edge', dpa: 'SOC2 Type 2' },
+  { name: 'Sentry', purpose: 'Error monitoring', location: 'US/EU', dpa: 'GDPR compliant' }
 ];
 
 export default function TrustCenterPage() {
   return (
-    <div className='flex flex-col'>
-      <section className='border-b'>
-        <div className='container mx-auto max-w-4xl px-4 py-16'>
-          <Shield className='h-12 w-12 text-primary' />
-          <h1 className='mt-4 text-4xl font-bold tracking-tight'>Trust Center</h1>
-          <p className='mt-4 text-lg text-muted-foreground'>Security and compliance information for SecQA. Updated continuously. Last reviewed: June 2026.</p>
-        </div>
+    <div style={{ background: '#EEEEEE', color: '#222831', fontFamily: 'Inter, sans-serif' }}>
+      <section style={{ background: '#222831', color: '#EEEEEE', padding: '5rem 2rem 4rem', textAlign: 'center' }}>
+        <Shield size={48} color='#00ADB5' />
+        <h1 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 800, letterSpacing: '-0.02em', margin: '1rem 0 1rem' }}>Trust Center</h1>
+        <p style={{ fontSize: '1.15rem', color: 'rgba(238,238,238,0.7)', maxWidth: '600px', margin: '0 auto' }}>Security and compliance information for SecQA. Updated continuously. Last reviewed: June 2026.</p>
       </section>
 
-      <section className='border-b'>
-        <div className='container mx-auto max-w-7xl px-4 py-16'>
-          <h2 className='text-2xl font-bold mb-12'>Security controls</h2>
-          <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
-            {SECURITY_CONTROLS.map((c) => (
-              <div key={c.title} className='rounded-lg border p-6'>
-                <div className='flex items-start justify-between'>
-                  <c.icon className='h-8 w-8 text-primary' />
-                  <span className={`text-xs px-2 py-1 rounded-full ${c.status === 'Active' ? 'bg-primary/10 text-primary' : 'bg-yellow-100 text-yellow-700'}`}>{c.status}</span>
+      <section style={{ padding: '4rem 2rem', maxWidth: '1100px', margin: '0 auto' }}>
+        <h2 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '2.5rem', letterSpacing: '-0.02em' }}>Security controls</h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem' }}>
+          {CONTROLS.map((c) => (
+            <div key={c.t} style={{ background: '#393E46', color: '#EEEEEE', borderRadius: '12px', padding: '1.8rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '1rem' }}>
+                <div style={{ width: '40px', height: '40px', background: '#00ADB5', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <c.icon size={18} color='#EEEEEE' />
                 </div>
-                <h3 className='mt-4 font-semibold'>{c.title}</h3>
-                <p className='mt-2 text-sm text-muted-foreground'>{c.desc}</p>
+                <span style={{ fontSize: '0.7rem', padding: '0.2rem 0.6rem', borderRadius: '999px', background: c.s === 'Active' ? 'rgba(0,173,181,0.2)' : 'rgba(238,238,238,0.1)', color: c.s === 'Active' ? '#00ADB5' : 'rgba(238,238,238,0.6)', fontWeight: 600 }}>{c.s}</span>
               </div>
-            ))}
-          </div>
+              <h3 style={{ fontSize: '1rem', fontWeight: 700, margin: '0 0 0.5rem' }}>{c.t}</h3>
+              <p style={{ fontSize: '0.85rem', color: 'rgba(238,238,238,0.7)', lineHeight: 1.5, margin: 0 }}>{c.d}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      <section className='border-b bg-muted/30'>
-        <div className='container mx-auto max-w-4xl px-4 py-16'>
-          <h2 className='text-2xl font-bold mb-8'>Sub-processors</h2>
-          <p className='text-sm text-muted-foreground mb-6'>We use the following sub-processors to deliver SecQA. We provide 30 days notice before adding or changing sub-processors.</p>
-          <div className='overflow-x-auto'>
-            <table className='w-full border-collapse'>
-              <thead><tr className='border-b'><th className='text-left p-3'>Provider</th><th className='text-left p-3'>Purpose</th><th className='text-left p-3'>Location</th><th className='text-left p-3'>DPA status</th></tr></thead>
+      <section style={{ background: '#222831', color: '#EEEEEE', padding: '4rem 2rem' }}>
+        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+          <h2 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '2rem' }}>Sub-processors</h2>
+          <div style={{ overflowX: 'auto' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+              <thead>
+                <tr style={{ borderBottom: '1px solid rgba(238,238,238,0.1)' }}>
+                  <th style={{ textAlign: 'left', padding: '0.8rem', fontSize: '0.8rem', fontWeight: 700, color: 'rgba(238,238,238,0.6)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Provider</th>
+                  <th style={{ textAlign: 'left', padding: '0.8rem', fontSize: '0.8rem', fontWeight: 700, color: 'rgba(238,238,238,0.6)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Purpose</th>
+                  <th style={{ textAlign: 'left', padding: '0.8rem', fontSize: '0.8rem', fontWeight: 700, color: 'rgba(238,238,238,0.6)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Location</th>
+                  <th style={{ textAlign: 'left', padding: '0.8rem', fontSize: '0.8rem', fontWeight: 700, color: 'rgba(238,238,238,0.6)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>DPA</th>
+                </tr>
+              </thead>
               <tbody>
                 {SUB_PROCESSORS.map((s) => (
-                  <tr key={s.name} className='border-b'><td className='p-3 font-medium'>{s.name}</td><td className='p-3 text-sm text-muted-foreground'>{s.purpose}</td><td className='p-3 text-sm'>{s.location}</td><td className='p-3 text-sm text-muted-foreground'>{s.dpa}</td></tr>
+                  <tr key={s.name} style={{ borderBottom: '1px solid rgba(238,238,238,0.05)' }}>
+                    <td style={{ padding: '0.8rem', fontWeight: 600, fontSize: '0.9rem' }}>{s.name}</td>
+                    <td style={{ padding: '0.8rem', fontSize: '0.85rem', color: 'rgba(238,238,238,0.7)' }}>{s.purpose}</td>
+                    <td style={{ padding: '0.8rem', fontSize: '0.85rem', color: 'rgba(238,238,238,0.7)' }}>{s.location}</td>
+                    <td style={{ padding: '0.8rem', fontSize: '0.85rem', color: 'rgba(238,238,238,0.7)' }}>{s.dpa}</td>
+                  </tr>
                 ))}
               </tbody>
             </table>
@@ -69,26 +78,20 @@ export default function TrustCenterPage() {
         </div>
       </section>
 
-      <section className='border-b'>
-        <div className='container mx-auto max-w-4xl px-4 py-16'>
-          <h2 className='text-2xl font-bold mb-6'>Data handling</h2>
-          <div className='space-y-4 text-sm text-muted-foreground'>
-            <p><strong className='text-foreground'>Data retention:</strong> Customer data is retained for the duration of the active subscription. Upon account closure, data is deleted within 30 days. Backup snapshots are overwritten within 90 days.</p>
-            <p><strong className='text-foreground'>Data deletion:</strong> Customers can delete their data at any time via the admin UI. Deletion is permanent within 30 days. We provide a deletion certificate on request.</p>
-            <p><strong className='text-foreground'>Data portability:</strong> Customers can export all their data (questionnaires, answers, answer library) in CSV format at any time from the dashboard.</p>
-            <p><strong className='text-foreground'>AI training:</strong> We never use customer data to train any AI model. All Claude API calls use customer data only for the immediate generation request. Anthropic guarantees zero data retention per their enterprise agreement.</p>
-            <p><strong className='text-foreground'>Incident response:</strong> We maintain a documented incident response plan. Critical incidents are escalated within 1 hour. Customers are notified within 24 hours of confirmed data breach per our DPA.</p>
-          </div>
+      <section style={{ padding: '4rem 2rem', maxWidth: '760px', margin: '0 auto' }}>
+        <h2 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '1.5rem' }}>Data handling</h2>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', fontSize: '0.9rem', color: 'rgba(34,40,49,0.7)', lineHeight: 1.7 }}>
+          <p><strong style={{ color: '#222831' }}>Retention:</strong> Customer data retained for active subscription. Deleted within 30 days of account closure. Backups overwritten within 90 days.</p>
+          <p><strong style={{ color: '#222831' }}>Deletion:</strong> Delete anytime via admin UI. Permanent within 30 days. Deletion certificate on request.</p>
+          <p><strong style={{ color: '#222831' }}>Portability:</strong> Export all data in CSV format anytime from dashboard.</p>
+          <p><strong style={{ color: '#222831' }}>AI training:</strong> We never use customer data to train AI models. Claude API calls use data only for immediate generation. Anthropic guarantees zero data retention.</p>
+          <p><strong style={{ color: '#222831' }}>Incident response:</strong> Critical incidents escalated within 1 hour. Customers notified within 24 hours of confirmed breach per DPA.</p>
         </div>
       </section>
 
-      <section>
-        <div className='container mx-auto max-w-4xl px-4 py-16 text-center'>
-          <h2 className='text-2xl font-bold mb-4'>Need more details?</h2>
-          <p className='text-muted-foreground mb-6'>For security reviews, DPAs, or pen test reports, contact us.</p>
-          <a href='mailto:founder@secqa.example?subject=Security%20Review' className='inline-block text-primary hover:underline'>founder@secqa.example</a>
-        </div>
-      </section>
+      <footer style={{ background: '#222831', padding: '2rem', textAlign: 'center', fontSize: '0.8rem', color: 'rgba(238,238,238,0.4)' }}>
+        © 2026 SecQA. Security questionnaires, answered.
+      </footer>
     </div>
   );
 }

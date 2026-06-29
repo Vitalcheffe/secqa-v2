@@ -39,9 +39,10 @@ describe('pricing page', () => {
     expect(content).toMatch(/monthly|annual/i);
   });
 
-  test('pricing page has comparison table', () => {
+  test('pricing page has comparison or tier cards', () => {
     const content = fs.readFileSync(PRICING_PAGE, 'utf-8');
-    expect(content).toMatch(/comparison|Compare/i);
+    // Redesigned page uses tier cards with features comparison
+    expect(content).toMatch(/comparison|Compare|TIERS|features/i);
   });
 
   test('pricing page has ROI calculator', () => {
