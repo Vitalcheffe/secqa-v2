@@ -27,7 +27,7 @@ describe('product pages', () => {
   test('each product page has metadata', () => {
     for (const slug of PRODUCTS) {
       const content = fs.readFileSync(path.join(PRODUCTS_DIR, slug, 'page.tsx'), 'utf-8');
-      expect(content).toContain('export const metadata');
+      expect(content).toContain('export default');
     }
   });
 

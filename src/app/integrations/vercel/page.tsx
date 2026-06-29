@@ -1,60 +1,87 @@
+'use client';
 import Link from 'next/link';
+import { FadeIn } from '@/components/ui/motion';
 import { ArrowRight } from 'lucide-react';
 
-export const metadata = {
-  title: 'Vercel Integration — SecQA',
-  description: 'Deploy SecQA to your Vercel team.'
-};
+const FEATURES = [
+  'Real-time sync and notifications',
+  'Automated workflow triggers',
+  'Custom field mapping',
+  'Audit trail and logging',
+];
+
+const STEPS = [
+  'Create an account on the provider platform',
+  'Generate API credentials or webhook URL',
+  'Add credentials to SecQA dashboard',
+  'Configure sync preferences and test',
+];
 
 export default function VercelIntegrationPage() {
   return (
-    <div style={{ background: '#EEEEEE', color: '#222831', fontFamily: 'Inter, sans-serif' }}>
-      <nav style={{ padding: '1rem 2rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', maxWidth: '1280px', margin: '0 auto' }}>
-        <Link href='/' style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', textDecoration: 'none' }}>
-          <div style={{ width: '36px', height: '36px', background: '#00ADB5', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#EEEEEE', fontWeight: 800, fontSize: '0.9rem' }}>SQ</div>
-          <span style={{ color: '#222831', fontWeight: 700, fontSize: '1.15rem' }}>SecQA</span>
-        </Link>
-        <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-          <Link href='/pricing' style={{ color: '#222831', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 500 }}>Pricing</Link>
-          <Link href='/integrations' style={{ color: '#222831', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 500 }}>Integrations</Link>
-          <Link href='/auth/sign-in' style={{ color: '#222831', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 500 }}>Log In</Link>
-          <Link href='/pricing' style={{ background: '#00ADB5', color: '#EEEEEE', padding: '0.55rem 1.2rem', borderRadius: '6px', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600 }}>Request a Demo</Link>
-        </div>
-      </nav>
-      <section style={{ background: '#222831', color: '#EEEEEE', padding: '5rem 2rem', textAlign: 'center' }}>
-        <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>▲</div>
-        <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 800, letterSpacing: '-0.02em', margin: '0 0 0.5rem' }}>Vercel + SecQA</h1>
-        <p style={{ fontSize: '1.1rem', color: 'rgba(238,238,238,0.7)', maxWidth: '600px', margin: '0 auto 2rem', lineHeight: 1.6 }}>Deploy SecQA to your Vercel team.</p>
-        <Link href='/pricing' style={{ background: '#00ADB5', color: '#EEEEEE', padding: '0.7rem 1.6rem', borderRadius: '6px', textDecoration: 'none', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>Get started <ArrowRight size={16} /></Link>
-      </section>
-      <section style={{ padding: '4rem 2rem', maxWidth: '760px', margin: '0 auto' }}>
-        <h2 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: '1.5rem' }}>Features</h2>
-        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-          <li style={{ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)' }}><span style={{ color: '#00ADB5' }}>&#10003;</span><span>One-click deploy</span></li>
-          <li style={{ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)' }}><span style={{ color: '#00ADB5' }}>&#10003;</span><span>Auto-scaling</span></li>
-          <li style={{ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)' }}><span style={{ color: '#00ADB5' }}>&#10003;</span><span>Edge functions</span></li>
-          <li style={{ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)' }}><span style={{ color: '#00ADB5' }}>&#10003;</span><span>Preview per branch</span></li>
-        </ul>
-      </section>
-      <section style={{ background: '#222831', color: '#EEEEEE', padding: '4rem 2rem' }}>
-        <div style={{ maxWidth: '760px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: '1.5rem' }}>Setup</h2>
-          <ol style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <li style={{ display: 'flex', gap: '0.8rem', alignItems: 'start' }}><span style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(0,173,181,0.2)', color: '#00ADB5', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700, flexShrink: 0 }}>1</span><span style={{ fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)', paddingTop: '0.2rem' }}>Connect Vercel</span></li>
-          <li style={{ display: 'flex', gap: '0.8rem', alignItems: 'start' }}><span style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(0,173,181,0.2)', color: '#00ADB5', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700, flexShrink: 0 }}>2</span><span style={{ fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)', paddingTop: '0.2rem' }}>Authorize</span></li>
-          <li style={{ display: 'flex', gap: '0.8rem', alignItems: 'start' }}><span style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(0,173,181,0.2)', color: '#00ADB5', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700, flexShrink: 0 }}>3</span><span style={{ fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)', paddingTop: '0.2rem' }}>Select project</span></li>
-          <li style={{ display: 'flex', gap: '0.8rem', alignItems: 'start' }}><span style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(0,173,181,0.2)', color: '#00ADB5', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700, flexShrink: 0 }}>4</span><span style={{ fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)', paddingTop: '0.2rem' }}>Configure env vars</span></li>
-          </ol>
+    <div className='bg-[#0D0D0D]'>
+      <section className='relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden'>
+        <div className='absolute inset-0 dot-pattern opacity-20' />
+        <div className='relative z-10 max-w-[1400px] mx-auto px-6 md:px-12'>
+          <FadeIn><p className='section-label mb-6'>Integrations</p></FadeIn>
+          <FadeIn delay={0.1}>
+            <div className='text-4xl mb-4'>▲</div>
+            <h1 className='text-5xl md:text-6xl lg:text-[72px] font-extrabold text-white tracking-[-0.03em] leading-[0.95] mb-6'>
+              Vercel + SecQA<span className='text-[#8B9DAF]'>.</span>
+            </h1>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <p className='text-lg md:text-xl text-[#CCCCCC] max-w-2xl leading-relaxed mb-8'>Deploy</p>
+            <Link href='/pricing' className='inline-flex items-center gap-2.5 bg-white text-black px-6 py-3 rounded-lg text-sm font-semibold hover:bg-white/90 transition-colors'>
+              Get started <ArrowRight size={14} />
+            </Link>
+          </FadeIn>
         </div>
       </section>
-      <section style={{ background: '#222831', color: '#EEEEEE', padding: '3rem 2rem', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: '0.5rem' }}>Ready to connect Vercel?</h2>
-        <p style={{ color: 'rgba(238,238,238,0.7)', marginBottom: '1.5rem' }}>Start your 14-day pilot at $499.</p>
-        <Link href='/pricing' style={{ background: '#00ADB5', color: '#EEEEEE', padding: '0.7rem 1.6rem', borderRadius: '6px', textDecoration: 'none', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>Start your pilot <ArrowRight size={16} /></Link>
+
+      <section className='py-20 md:py-28 bg-[#0D0D0D]'>
+        <div className='max-w-[800px] mx-auto px-6 md:px-12'>
+          <FadeIn>
+            <h2 className='text-2xl md:text-3xl font-bold text-white mb-6 tracking-tight'>Features</h2>
+            <ul className='space-y-3'>
+              {FEATURES.map((f) => (
+                <li key={f} className='flex items-start gap-3'>
+                  <span className='text-[#8B9DAF] mt-1 shrink-0'>✓</span>
+                  <span className='text-[14px] text-[#CCCCCC]'>{f}</span>
+                </li>
+              ))}
+            </ul>
+          </FadeIn>
+        </div>
       </section>
-      <footer style={{ background: '#222831', padding: '2rem', textAlign: 'center', fontSize: '0.8rem', color: 'rgba(238,238,238,0.4)' }}>
-        © 2026 SecQA. Security questionnaires, answered.
-      </footer>
+
+      <section className='py-20 md:py-28 bg-[#111111]'>
+        <div className='max-w-[800px] mx-auto px-6 md:px-12'>
+          <FadeIn>
+            <h2 className='text-2xl md:text-3xl font-bold text-white mb-6 tracking-tight'>Setup</h2>
+            <ol className='space-y-4'>
+              {STEPS.map((s, i) => (
+                <li key={i} className='flex items-start gap-4'>
+                  <span className='w-7 h-7 flex items-center justify-center rounded-full bg-[rgba(139,157,175,0.1)] border border-[rgba(139,157,175,0.15)] text-[#8B9DAF] text-[12px] font-bold shrink-0'>{i + 1}</span>
+                  <span className='text-[14px] text-[#CCCCCC] pt-0.5'>{s}</span>
+                </li>
+              ))}
+            </ol>
+          </FadeIn>
+        </div>
+      </section>
+
+      <section className='py-20 md:py-28 bg-[#0D0D0D]'>
+        <div className='max-w-[800px] mx-auto px-6 md:px-12 text-center'>
+          <FadeIn>
+            <h2 className='text-2xl md:text-3xl font-bold text-white tracking-tight mb-4'>Ready to connect Vercel?</h2>
+            <p className='text-lg text-white/50 mb-8'>Start your 14-day pilot at $499.</p>
+            <Link href='/pricing' className='inline-flex items-center gap-2.5 bg-white text-black px-6 py-3 rounded-lg text-sm font-semibold hover:bg-white/90 transition-colors'>
+              Start your pilot <ArrowRight size={14} />
+            </Link>
+          </FadeIn>
+        </div>
+      </section>
     </div>
   );
 }

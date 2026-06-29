@@ -1,79 +1,124 @@
+'use client';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { FadeIn, StaggerContainer, StaggerItem } from '@/components/ui/motion';
+import { ArrowRight, CheckCircle2, X } from 'lucide-react';
 
-export const metadata = {
-  title: 'SecQA vs Vanta — Comparison',
-  description: 'Detailed comparison: SecQA vs Vanta.'
-};
+const secqaWins = [
+  'Priced for SaaS $1M-$20M ARR',
+  'Self-serve checkout, no sales calls',
+  '14-day paid pilot at $499',
+  'HubSpot deal integration',
+  '90%-complete-first-draft guarantee',
+];
+
+const competitorWins = [
+  'More mature product',
+  'Larger integration ecosystem',
+  'Brand recognition in enterprise',
+  'Dedicated implementation team',
+];
 
 export default function ComparisonPage() {
   return (
-    <div style={{ background: '#EEEEEE', color: '#222831', fontFamily: 'Inter, sans-serif' }}>
-      <nav style={{ padding: '1rem 2rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', maxWidth: '1280px', margin: '0 auto' }}>
-        <Link href='/' style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', textDecoration: 'none' }}>
-          <div style={{ width: '36px', height: '36px', background: '#00ADB5', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#EEEEEE', fontWeight: 800, fontSize: '0.9rem' }}>SQ</div>
-          <span style={{ color: '#222831', fontWeight: 700, fontSize: '1.15rem' }}>SecQA</span>
-        </Link>
-        <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-          <Link href='/pricing' style={{ color: '#222831', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 500 }}>Pricing</Link>
-          <Link href='/integrations' style={{ color: '#222831', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 500 }}>Integrations</Link>
-          <Link href='/auth/sign-in' style={{ color: '#222831', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 500 }}>Log In</Link>
-          <Link href='/pricing' style={{ background: '#00ADB5', color: '#EEEEEE', padding: '0.55rem 1.2rem', borderRadius: '6px', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600 }}>Request a Demo</Link>
-        </div>
-      </nav>
-      <section style={{ background: '#222831', color: '#EEEEEE', padding: '4rem 2rem', textAlign: 'center' }}>
-        <h1 style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 800, letterSpacing: '-0.02em', margin: '0 0 1rem' }}>SecQA vs <span style={{ color: '#00ADB5' }}>Vanta</span></h1>
-        <p style={{ fontSize: '1.1rem', color: 'rgba(238,238,238,0.7)', maxWidth: '600px', margin: '0 auto' }}>A factual comparison for B2B SaaS founders.</p>
-      </section>
-      <section style={{ padding: '3rem 2rem', maxWidth: '900px', margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
-          <div style={{ background: '#222831', color: '#EEEEEE', borderRadius: '12px', padding: '2rem', border: '2px solid #00ADB5' }}>
-            <h3 style={{ fontWeight: 700, fontSize: '1.2rem', margin: '0 0 0.5rem' }}>SecQA</h3>
-            <div style={{ fontSize: '2rem', fontWeight: 800, color: '#00ADB5', margin: '0.5rem 0' }}>$99/month</div>
-            <p style={{ fontSize: '0.85rem', color: 'rgba(238,238,238,0.7)' }}>Built for SaaS $1M-$20M ARR</p>
-          </div>
-          <div style={{ background: '#393E46', color: '#EEEEEE', borderRadius: '12px', padding: '2rem' }}>
-            <h3 style={{ fontWeight: 700, fontSize: '1.2rem', margin: '0 0 0.5rem' }}>Vanta</h3>
-            <div style={{ fontSize: '2rem', fontWeight: 800, margin: '0.5rem 0' }}>$5,000/year</div>
-            <p style={{ fontSize: '0.85rem', color: 'rgba(238,238,238,0.7)' }}>SOC2 compliance and evidence collection</p>
-          </div>
+    <div className='bg-[#0D0D0D]'>
+      <section className='relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden'>
+        <div className='absolute inset-0 dot-pattern opacity-20' />
+        <div className='relative z-10 max-w-[1400px] mx-auto px-6 md:px-12'>
+          <FadeIn><p className='section-label mb-6'>Compare</p></FadeIn>
+          <FadeIn delay={0.1}>
+            <h1 className='text-5xl md:text-7xl lg:text-[88px] font-extrabold text-white tracking-[-0.03em] leading-[0.95] mb-6'>
+              SecQA vs<br />Vanta<span className='text-[#8B9DAF]'>.</span>
+            </h1>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <p className='text-lg md:text-xl text-[#CCCCCC] max-w-2xl leading-relaxed'>A factual comparison for B2B SaaS founders.</p>
+          </FadeIn>
         </div>
       </section>
-      <section style={{ background: '#222831', color: '#EEEEEE', padding: '3rem 2rem' }}>
-        <div style={{ maxWidth: '900px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
-          <div>
-            <h3 style={{ fontWeight: 700, marginBottom: '1rem' }}>Where SecQA wins</h3>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-              <li style={{ display: 'flex', gap: '0.5rem', fontSize: '0.85rem' }}><span style={{ color: '#00ADB5' }}>&#10003;</span><span>Priced for SaaS $1M-$20M ARR</span></li>
-              <li style={{ display: 'flex', gap: '0.5rem', fontSize: '0.85rem' }}><span style={{ color: '#00ADB5' }}>&#10003;</span><span>Self-serve checkout, no sales calls</span></li>
-              <li style={{ display: 'flex', gap: '0.5rem', fontSize: '0.85rem' }}><span style={{ color: '#00ADB5' }}>&#10003;</span><span>14-day paid pilot at $499</span></li>
-              <li style={{ display: 'flex', gap: '0.5rem', fontSize: '0.85rem' }}><span style={{ color: '#00ADB5' }}>&#10003;</span><span>HubSpot deal integration</span></li>
-              <li style={{ display: 'flex', gap: '0.5rem', fontSize: '0.85rem' }}><span style={{ color: '#00ADB5' }}>&#10003;</span><span>90%-complete-first-draft guarantee</span></li>
-            </ul>
-          </div>
-          <div>
-            <h3 style={{ fontWeight: 700, marginBottom: '1rem', color: 'rgba(238,238,238,0.6)' }}>Where Vanta wins</h3>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-              <li style={{ display: 'flex', gap: '0.5rem', fontSize: '0.85rem', color: 'rgba(238,238,238,0.5)' }}><span>&#10003;</span><span>More mature product</span></li>
-              <li style={{ display: 'flex', gap: '0.5rem', fontSize: '0.85rem', color: 'rgba(238,238,238,0.5)' }}><span>&#10003;</span><span>Larger integration ecosystem</span></li>
-              <li style={{ display: 'flex', gap: '0.5rem', fontSize: '0.85rem', color: 'rgba(238,238,238,0.5)' }}><span>&#10003;</span><span>Brand recognition in enterprise</span></li>
-              <li style={{ display: 'flex', gap: '0.5rem', fontSize: '0.85rem', color: 'rgba(238,238,238,0.5)' }}><span>&#10003;</span><span>Dedicated implementation team</span></li>
-            </ul>
+
+      <section className='py-12 md:py-20 bg-[#0D0D0D]'>
+        <div className='max-w-[1000px] mx-auto px-6 md:px-12'>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+            <FadeIn direction='right'>
+              <div className='card p-8 ring-1 ring-[rgba(139,157,175,0.2)]'>
+                <h3 className='text-lg font-bold text-white mb-2'>SecQA</h3>
+                <div className='flex items-baseline gap-1 mb-2'>
+                  <span className='text-4xl font-extrabold text-[#8B9DAF]'>$99</span>
+                  <span className='text-[14px] text-[#999999]'>/month</span>
+                </div>
+                <p className='text-[13px] text-[#666666]'>Built for SaaS $1M-$20M ARR</p>
+              </div>
+            </FadeIn>
+            <FadeIn direction='left' delay={0.1}>
+              <div className='card p-8'>
+                <h3 className='text-lg font-bold text-white mb-2'>Vanta</h3>
+                <div className='flex items-baseline gap-1 mb-2'>
+                  <span className='text-4xl font-extrabold text-white'>$5,000/year</span>
+                </div>
+                <p className='text-[13px] text-[#666666]'>SOC2 compliance and evidence collection</p>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
-      <section style={{ padding: '3rem 2rem', maxWidth: '760px', margin: '0 auto' }}>
-        <h3 style={{ fontWeight: 700, marginBottom: '0.8rem' }}>Which is best for you?</h3>
-        <p style={{ fontSize: '0.9rem', color: 'rgba(34,40,49,0.7)', lineHeight: 1.6 }}>Choose Vanta if you are $50M+ ARR with dedicated security team. Choose SecQA if you are $1M-$20M ARR and need questionnaire response workflow at a price that makes sense.</p>
+
+      <section className='py-12 md:py-20 bg-[#111111]'>
+        <div className='max-w-[1000px] mx-auto px-6 md:px-12'>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+            <FadeIn direction='right'>
+              <div>
+                <h3 className='text-[16px] font-bold text-white mb-4'>Where SecQA wins</h3>
+                <ul className='space-y-3'>
+                  {secqaWins.map((w) => (
+                    <li key={w} className='flex items-start gap-3'>
+                      <CheckCircle2 size={16} className='text-[#8B9DAF] mt-0.5 shrink-0' />
+                      <span className='text-[13px] text-[#CCCCCC]'>{w}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </FadeIn>
+            <FadeIn direction='left' delay={0.1}>
+              <div>
+                <h3 className='text-[16px] font-bold text-white/60 mb-4'>Where Vanta wins</h3>
+                <ul className='space-y-3'>
+                  {competitorWins.map((w) => (
+                    <li key={w} className='flex items-start gap-3'>
+                      <CheckCircle2 size={16} className='text-white/30 mt-0.5 shrink-0' />
+                      <span className='text-[13px] text-white/50'>{w}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
       </section>
-      <section style={{ background: '#222831', color: '#EEEEEE', padding: '3rem 2rem', textAlign: 'center' }}>
-        <h2 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: '0.5rem' }}>Try SecQA</h2>
-        <p style={{ color: 'rgba(238,238,238,0.7)', marginBottom: '1.5rem' }}>14-day paid pilot at $499.</p>
-        <Link href='/pricing' style={{ background: '#00ADB5', color: '#EEEEEE', padding: '0.7rem 1.6rem', borderRadius: '6px', textDecoration: 'none', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>Start your pilot <ArrowRight size={16} /></Link>
+
+      <section className='py-12 md:py-20 bg-[#0D0D0D]'>
+        <div className='max-w-[800px] mx-auto px-6 md:px-12'>
+          <FadeIn>
+            <h3 className='text-[18px] font-bold text-white mb-3'>Which is best for you?</h3>
+            <p className='text-[14px] text-[#999999] leading-[1.7]'>
+              Choose Vanta if you are $50M+ ARR with dedicated security team and budget for enterprise tools.
+              Choose SecQA if you are $1M-$20M ARR and need questionnaire response workflow at a price
+              that makes sense for your deal volume.
+            </p>
+          </FadeIn>
+        </div>
       </section>
-      <footer style={{ background: '#222831', padding: '2rem', textAlign: 'center', fontSize: '0.8rem', color: 'rgba(238,238,238,0.4)' }}>
-        © 2026 SecQA. Security questionnaires, answered.
-      </footer>
+
+      <section className='py-20 md:py-28 bg-[#111111]'>
+        <div className='max-w-[800px] mx-auto px-6 md:px-12 text-center'>
+          <FadeIn>
+            <h2 className='text-3xl md:text-4xl font-bold text-white tracking-tight mb-4'>Try SecQA</h2>
+            <p className='text-lg text-white/50 mb-8'>14-day paid pilot at $499.</p>
+            <Link href='/pricing' className='inline-flex items-center gap-2.5 bg-white text-black px-6 py-3 rounded-lg text-sm font-semibold hover:bg-white/90 transition-colors'>
+              Start your pilot <ArrowRight size={14} />
+            </Link>
+          </FadeIn>
+        </div>
+      </section>
     </div>
   );
 }

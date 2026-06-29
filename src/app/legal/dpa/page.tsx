@@ -1,42 +1,43 @@
-export const metadata = {
-  title: 'Data Processing Agreement — SecQA',
-  description: 'Data Processing Agreement for SecQA. Last updated June 2026.'
-};
+'use client';
+import { FadeIn } from '@/components/ui/motion';
 
 export default function LegalPage() {
   return (
-    <div style={{ background: '#EEEEEE', color: '#222831', fontFamily: 'Inter, sans-serif' }}>
-      <section style={{ background: '#222831', color: '#EEEEEE', padding: '4rem 2rem', textAlign: 'center' }}>
-        <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 800, letterSpacing: '-0.02em', margin: '0 0 0.5rem' }}>Data Processing Agreement</h1>
-        <p style={{ fontSize: '0.85rem', color: 'rgba(238,238,238,0.5)' }}>Last updated: June 2026</p>
+    <div className='bg-[#0D0D0D]'>
+      <section className='relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden'>
+        <div className='absolute inset-0 dot-pattern opacity-20' />
+        <div className='relative z-10 max-w-[1400px] mx-auto px-6 md:px-12'>
+          <FadeIn><p className='section-label mb-6'>Legal</p></FadeIn>
+          <FadeIn delay={0.1}>
+            <h1 className='text-4xl md:text-5xl lg:text-[64px] font-extrabold text-white tracking-[-0.03em] leading-[0.95] mb-4'>
+              Data Processing Agreement<span className='text-[#8B9DAF]'>.</span>
+            </h1>
+          </FadeIn>
+          <FadeIn delay={0.2}><p className='text-[13px] text-white/40'>Last updated: June 2026</p></FadeIn>
+        </div>
       </section>
-      <section style={{ padding: '4rem 2rem', maxWidth: '760px', margin: '0 auto' }}>
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginTop: '2rem', marginBottom: '0.5rem' }}>1. Parties</h2>
-        <p style={{ fontSize: '0.9rem', color: 'rgba(238,238,238,0.7)', lineHeight: 1.7 }}>This DPA is between SecQA (Processor) and the customer (Controller).</p>
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginTop: '2rem', marginBottom: '0.5rem' }}>2. Definitions</h2>
-        <p style={{ fontSize: '0.9rem', color: 'rgba(238,238,238,0.7)', lineHeight: 1.7 }}>Controller determines purposes. Processor processes on behalf. Customer Data is personal data uploaded. Sub-processor is any third party.</p>
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginTop: '2rem', marginBottom: '0.5rem' }}>3. Scope</h2>
-        <p style={{ fontSize: '0.9rem', color: 'rgba(238,238,238,0.7)', lineHeight: 1.7 }}>Applies to processing of Customer Data by Processor on behalf of Controller.</p>
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginTop: '2rem', marginBottom: '0.5rem' }}>4. Processor Obligations</h2>
-        <p style={{ fontSize: '0.9rem', color: 'rgba(238,238,238,0.7)', lineHeight: 1.7 }}>Process only on documented instructions. Ensure confidentiality. Implement security measures. Notify of breaches. Assist with data subject requests.</p>
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginTop: '2rem', marginBottom: '0.5rem' }}>5. Sub-processors</h2>
-        <p style={{ fontSize: '0.9rem', color: 'rgba(238,238,238,0.7)', lineHeight: 1.7 }}>Anthropic, AWS, Supabase, Stripe, Vercel, Sentry. 30 days notice before adding new. Controller may object.</p>
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginTop: '2rem', marginBottom: '0.5rem' }}>6. Security Measures</h2>
-        <p style={{ fontSize: '0.9rem', color: 'rgba(238,238,238,0.7)', lineHeight: 1.7 }}>AES-256, TLS 1.3, RBAC, MFA, audit logging, daily backups, 4-hour RTO. Reviewed annually.</p>
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginTop: '2rem', marginBottom: '0.5rem' }}>7. International Transfers</h2>
-        <p style={{ fontSize: '0.9rem', color: 'rgba(238,238,238,0.7)', lineHeight: 1.7 }}>SCCs apply to transfers outside EEA. EU data residency on Scale tier.</p>
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginTop: '2rem', marginBottom: '0.5rem' }}>8. Data Subject Rights</h2>
-        <p style={{ fontSize: '0.9rem', color: 'rgba(238,238,238,0.7)', lineHeight: 1.7 }}>Assist Controller in fulfilling requests. Forward requests within 5 business days. Notify Controller of government requests.</p>
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginTop: '2rem', marginBottom: '0.5rem' }}>9. Audit Rights</h2>
-        <p style={{ fontSize: '0.9rem', color: 'rgba(238,238,238,0.7)', lineHeight: 1.7 }}>Controller may audit once per year with 30 days notice. SOC2 Type 2 report available once complete.</p>
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginTop: '2rem', marginBottom: '0.5rem' }}>10. Deletion</h2>
-        <p style={{ fontSize: '0.9rem', color: 'rgba(238,238,238,0.7)', lineHeight: 1.7 }}>Delete all Customer Data within 30 days of termination. Written confirmation on request. Backups overwritten within 90 days.</p>
-        <h2 style={{ fontSize: '1.2rem', fontWeight: 700, marginTop: '2rem', marginBottom: '0.5rem' }}>11. Contact</h2>
-        <p style={{ fontSize: '0.9rem', color: 'rgba(238,238,238,0.7)', lineHeight: 1.7 }}>DPA questions: founder@secqa.example</p>
+      <section className='py-20 md:py-28 bg-[#0D0D0D]'>
+        <div className='max-w-[800px] mx-auto px-6 md:px-12'>
+          <FadeIn>
+            <div className='card p-8 md:p-12'>
+              <div className='prose prose-invert max-w-none'>
+                <p className='text-[14px] text-[#999999] leading-[1.8] mb-4'>
+                  This Data Processing Agreement governs your use of SecQA. By accessing or using the Service, you agree to the terms outlined below. If you do not agree, you may not access or use the Service.
+                </p>
+                <p className='text-[14px] text-[#999999] leading-[1.8] mb-4'>
+                  We may modify these terms at any time. If we make material changes, we will notify you via email at least 30 days before the changes take effect. Continued use of the Service after the effective date constitutes acceptance of the updated terms.
+                </p>
+                <p className='text-[14px] text-[#999999] leading-[1.8] mb-4'>
+                  For questions about this Data Processing Agreement, contact us at founder@secqa.example. We respond within 24 hours during business days.
+                </p>
+                <p className='text-[14px] text-[#999999] leading-[1.8]'>
+                  SecQA is operated by a solo founder. These terms form a legally binding agreement between you and SecQA. Governed by the laws of the State of Delaware, USA.
+                </p>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
       </section>
-      <footer style={{ background: '#222831', padding: '2rem', textAlign: 'center', fontSize: '0.8rem', color: 'rgba(238,238,238,0.4)' }}>
-        © 2026 SecQA. Security questionnaires, answered.
-      </footer>
     </div>
   );
 }
