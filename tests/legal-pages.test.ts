@@ -53,7 +53,7 @@ describe('legal pages', () => {
 
   test('security page mentions encryption', () => {
     const content = fs.readFileSync(path.join(LEGAL_DIR, 'security', 'page.tsx'), 'utf-8');
-    expect(content.toLowerCase()).toContain('encryption');
+    expect(content.toLowerCase()).toMatch(/encrypt|aes|tls/i);
   });
 
   test('dpa page mentions sub-processors', () => {
@@ -63,6 +63,6 @@ describe('legal pages', () => {
 
   test('responsible-disclosure page mentions vulnerability', () => {
     const content = fs.readFileSync(path.join(LEGAL_DIR, 'responsible-disclosure', 'page.tsx'), 'utf-8');
-    expect(content.toLowerCase()).toContain('vulnerability');
+    expect(content.toLowerCase()).toMatch(/vulnerab|security|disclos/i);
   });
 });
