@@ -33,13 +33,28 @@ const STATIC_ROUTES = [
   '/products/knowledge-management',
 ];
 
+const INTEGRATION_SLUGS = [
+  'slack', 'notion', 'hubspot', 'salesforce', 'linear', 'jira', 'github',
+  'vercel', 'aws', 'okta', 'auth0', 'google-workspace', 'datadog', 'sentry',
+  'stripe', 'resend', 'postgres', 'snowflake', 'clerk', 'mailchimp'
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  return STATIC_ROUTES.map((path) => ({
+  const staticEntries: MetadataRoute.Sitemap = STATIC_ROUTES.map((path) => ({
     url: `${BASE_URL}${path}`,
     lastModified: now,
     changeFrequency: path === '' ? 'daily' : path === '/changelog' ? 'weekly' : 'monthly',
     priority: path === '' ? 1.0 : path === '/pricing' ? 0.9 : path.startsWith('/compare/') ? 0.8 : 0.6,
   }));
+
+  const integrationEntries: MetadataRoute.Sitemap = INTEGRATION_SLUGS.map((slug) => ({
+    url: `${BASE_URL}/integrations/${slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
+
+  return [...staticEntries, ...integrationEntries];
 }
