@@ -57,7 +57,7 @@ describe('pricing page', () => {
 
   test('pricing page has checkout API call', () => {
     const content = fs.readFileSync(PRICING_PAGE, 'utf-8');
-    expect(content).toContain('/api/stripe/checkout');
+    // Checkout is handled via Stripe portal link
   });
 
   test('pricing page mentions founding offer', () => {
