@@ -1,64 +1,60 @@
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export const metadata = {
   title: 'Jira Integration — SecQA',
-  description: 'Create Jira tickets for questionnaires requiring manual review. Track compliance work alongside your sprint planning.'
+  description: 'Create Jira tickets for questionnaires requiring manual review.'
 };
 
 export default function JiraIntegrationPage() {
   return (
-    <div className='flex flex-col'>
-      <section className='border-b'>
-        <div className='container mx-auto max-w-4xl px-4 py-16'>
-          <div className='flex items-center gap-4 mb-6'>
-            <div className='text-4xl'>🎯</div>
-            <div>
-              <h1 className='text-3xl font-bold'>Jira + SecQA</h1>
-              <Badge variant='secondary' className='mt-1'>Project Management</Badge>
-            </div>
-          </div>
-          <p className='text-lg text-muted-foreground max-w-2xl'>Create Jira tickets for questionnaires requiring manual review. Track compliance work alongside your sprint planning.</p>
-          <div className='mt-6 flex gap-3'>
-            <Button asChild><Link href='/pricing'>Get started <ArrowRight className='ml-2 h-4 w-4' /></Link></Button>
-            <Button asChild variant='outline'><Link href='/contact'>Talk to us</Link></Button>
-          </div>
+    <div style={{ background: '#EEEEEE', color: '#222831', fontFamily: 'Inter, sans-serif' }}>
+      <nav style={{ padding: '1rem 2rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', maxWidth: '1280px', margin: '0 auto' }}>
+        <Link href='/' style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', textDecoration: 'none' }}>
+          <div style={{ width: '36px', height: '36px', background: '#00ADB5', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#EEEEEE', fontWeight: 800, fontSize: '0.9rem' }}>SQ</div>
+          <span style={{ color: '#222831', fontWeight: 700, fontSize: '1.15rem' }}>SecQA</span>
+        </Link>
+        <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+          <Link href='/pricing' style={{ color: '#222831', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 500 }}>Pricing</Link>
+          <Link href='/integrations' style={{ color: '#222831', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 500 }}>Integrations</Link>
+          <Link href='/auth/sign-in' style={{ color: '#222831', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 500 }}>Log In</Link>
+          <Link href='/pricing' style={{ background: '#00ADB5', color: '#EEEEEE', padding: '0.55rem 1.2rem', borderRadius: '6px', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600 }}>Request a Demo</Link>
         </div>
+      </nav>
+      <section style={{ background: '#222831', color: '#EEEEEE', padding: '5rem 2rem', textAlign: 'center' }}>
+        <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🎯</div>
+        <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 800, letterSpacing: '-0.02em', margin: '0 0 0.5rem' }}>Jira + SecQA</h1>
+        <p style={{ fontSize: '1.1rem', color: 'rgba(238,238,238,0.7)', maxWidth: '600px', margin: '0 auto 2rem', lineHeight: 1.6 }}>Create Jira tickets for questionnaires requiring manual review.</p>
+        <Link href='/pricing' style={{ background: '#00ADB5', color: '#EEEEEE', padding: '0.7rem 1.6rem', borderRadius: '6px', textDecoration: 'none', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>Get started <ArrowRight size={16} /></Link>
       </section>
-
-      <section className='border-b'>
-        <div className='container mx-auto max-w-4xl px-4 py-16'>
-          <h2 className='text-2xl font-bold mb-6'>Features</h2>
-          <ul className='space-y-3'>
-            <li className='flex items-start gap-2'><span className='text-primary mt-1'>✓</span><span>Auto-create Jira ticket per questionnaire</span></li>
-            <li className='flex items-start gap-2'><span className='text-primary mt-1'>✓</span><span>Status sync: Jira → questionnaire</span></li>
-            <li className='flex items-start gap-2'><span className='text-primary mt-1'>✓</span><span>Custom issue type for compliance work</span></li>
-            <li className='flex items-start gap-2'><span className='text-primary mt-1'>✓</span><span>Sprint integration</span></li>
-          </ul>
-        </div>
+      <section style={{ padding: '4rem 2rem', maxWidth: '760px', margin: '0 auto' }}>
+        <h2 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: '1.5rem' }}>Features</h2>
+        <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+          <li style={ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)' }><span style={ color: '#00ADB5' }>&#10003;</span><span>Auto-create Jira ticket per questionnaire</span></li>
+          <li style={ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)' }><span style={ color: '#00ADB5' }>&#10003;</span><span>Status sync: Jira → questionnaire</span></li>
+          <li style={ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)' }><span style={ color: '#00ADB5' }>&#10003;</span><span>Custom issue type for compliance work</span></li>
+          <li style={ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)' }><span style={ color: '#00ADB5' }>&#10003;</span><span>Sprint integration</span></li>
+        </ul>
       </section>
-
-      <section className='border-b bg-muted/30'>
-        <div className='container mx-auto max-w-4xl px-4 py-16'>
-          <h2 className='text-2xl font-bold mb-6'>Setup</h2>
-          <ol className='space-y-4'>
-            <li className='flex items-start gap-3'><span className='flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-primary text-xs font-semibold flex-shrink-0'>1</span><span className='text-sm pt-0.5'>Create an API token at id.atlassian.com</span></li>
-            <li className='flex items-start gap-3'><span className='flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-primary text-xs font-semibold flex-shrink-0'>2</span><span className='text-sm pt-0.5'>Note your Jira site (e.g., yourcompany.atlassian.net)</span></li>
-            <li className='flex items-start gap-3'><span className='flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-primary text-xs font-semibold flex-shrink-0'>3</span><span className='text-sm pt-0.5'>Add credentials to SecQA dashboard, Integrations, Jira</span></li>
-            <li className='flex items-start gap-3'><span className='flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-primary text-xs font-semibold flex-shrink-0'>4</span><span className='text-sm pt-0.5'>Select the project for questionnaire tickets</span></li>
+      <section style={{ background: '#222831', color: '#EEEEEE', padding: '4rem 2rem' }}>
+        <div style={{ maxWidth: '760px', margin: '0 auto' }}>
+          <h2 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: '1.5rem' }}>Setup</h2>
+          <ol style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <li style={ display: 'flex', gap: '0.8rem', alignItems: 'start' }><span style={ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(0,173,181,0.2)', color: '#00ADB5', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700, flexShrink: 0 }>1</span><span style={ fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)', paddingTop: '0.2rem' }>Create an API token at id.atlassian.com</span></li>
+          <li style={ display: 'flex', gap: '0.8rem', alignItems: 'start' }><span style={ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(0,173,181,0.2)', color: '#00ADB5', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700, flexShrink: 0 }>2</span><span style={ fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)', paddingTop: '0.2rem' }>Note your Jira site (e.g., yourcompany.atlassian.net)</span></li>
+          <li style={ display: 'flex', gap: '0.8rem', alignItems: 'start' }><span style={ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(0,173,181,0.2)', color: '#00ADB5', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700, flexShrink: 0 }>3</span><span style={ fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)', paddingTop: '0.2rem' }>Add credentials to SecQA dashboard, Integrations, Jira</span></li>
+          <li style={ display: 'flex', gap: '0.8rem', alignItems: 'start' }><span style={ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(0,173,181,0.2)', color: '#00ADB5', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700, flexShrink: 0 }>4</span><span style={ fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)', paddingTop: '0.2rem' }>Select the project for questionnaire tickets</span></li>
           </ol>
         </div>
       </section>
-
-      <section>
-        <div className='container mx-auto max-w-4xl px-4 py-16 text-center'>
-          <h2 className='text-2xl font-bold mb-4'>Ready to connect Jira?</h2>
-          <p className='text-muted-foreground mb-6'>Start your 14-day pilot at $499. We process your next 2 questionnaires live.</p>
-          <Button asChild><Link href='/pricing'>Start your pilot</Link></Button>
-        </div>
+      <section style={{ background: '#222831', color: '#EEEEEE', padding: '3rem 2rem', textAlign: 'center' }}>
+        <h2 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: '0.5rem' }}>Ready to connect Jira?</h2>
+        <p style={{ color: 'rgba(238,238,238,0.7)', marginBottom: '1.5rem' }}>Start your 14-day pilot at $499.</p>
+        <Link href='/pricing' style={{ background: '#00ADB5', color: '#EEEEEE', padding: '0.7rem 1.6rem', borderRadius: '6px', textDecoration: 'none', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>Start your pilot <ArrowRight size={16} /></Link>
       </section>
+      <footer style={{ background: '#222831', padding: '2rem', textAlign: 'center', fontSize: '0.8rem', color: 'rgba(238,238,238,0.4)' }}>
+        © 2026 SecQA. Security questionnaires, answered.
+      </footer>
     </div>
   );
 }
