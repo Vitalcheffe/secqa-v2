@@ -33,7 +33,7 @@ const features = [
 const stats = [
   { value: 14, prefix: '', suffix: 'h', label: 'Old Baseline', desc: 'Hours per questionnaire before SecQA — copy-pasting from old Google Docs, pinging security team, reformatting at 11pm.' },
   { value: 90, prefix: '', suffix: 'min', label: 'New Response Time', desc: 'AI-powered first draft generation. Upload, generate, review, export — done in under 90 minutes.' },
-  { value: 53, prefix: '$', suffix: 'K', label: 'Annual Savings', desc: 'Engineering time recovered per customer at 32 questionnaires/year × $120/hr fully-loaded sales engineer cost.' },
+  { value: 53, prefix: '$', suffix: 'K', label: 'Annual Savings', decimals: 0,, desc: 'Engineering time recovered per customer at 32 questionnaires/year × $120/hr fully-loaded sales engineer cost.' },
   { value: 44, prefix: '', suffix: 'x', label: 'Return on Investment', desc: 'ROI at Pro tier ($99/mo vs $53K saved). The math is obvious — pay $1,188/year to save $53,760.' },
 ];
 
@@ -556,15 +556,15 @@ export default function HomePage() {
                 </div>
                 <div className='bg-[#0D0D0D] rounded-md p-4 font-mono text-[12px] leading-[1.9] overflow-x-auto'>
                   <p className='text-[#666666]'>// Generate draft answers</p>
-                  <p><span className='text-[#C678DD]'>const</span> res = <span className='text-[#C678DD]'>await</span> fetch(<span className='text-[#98C379]'>&apos;/api/generate&apos;</span>, {'{')}</p>
+                  <p><span className='text-[#C678DD]'>const</span> res = <span className='text-[#C678DD]'>await</span> fetch(<span className='text-[#98C379]'>&apos;/api/generate&apos;</span>, {'{'})</p>
                   <p>&nbsp;&nbsp;method: <span className='text-[#98C379]'>&apos;POST&apos;</span>,</p>
                   <p>&nbsp;&nbsp;headers: {'{'} <span className='text-[#98C379]'>&apos;Content-Type&apos;</span>: <span className='text-[#98C379]'>&apos;application/json&apos;</span> {'}'},</p>
                   <p>&nbsp;&nbsp;body: JSON.stringify({'{'} <span className='text-[#98C379]'>&apos;questionnaireId&apos;</span>: id {'}'}),</p>
                   <p>{'}'});</p>
                   <br />
                   <p className='text-[#666666]'>// Each answer has source citation</p>
-                  <p><span className='text-[#C678DD]'>const</span> {'{'} drafts {'}'} = <span className='text-[#C678DD]'>await</span> res.json();</p>
-                  <p>drafts.<span className='text-[#E5C07B]'>forEach</span>(d {' =>'} {'{')}</p>
+                  <p><span className='text-[#C678DD]'>const</span> data = <span className='text-[#C678DD]'>await</span> res.json();</p>
+                  <p>data.drafts.<span className='text-[#E5C07B]'>forEach</span>(d ={'>'} {'{'})</p>
                   <p>&nbsp;&nbsp;console.<span className='text-[#E5C07B]'>log</span>(d.answerText);</p>
                   <p>&nbsp;&nbsp;console.<span className='text-[#E5C07B]'>log</span>(d.confidence); <span className='text-[#666666]'>// 0.0 - 1.0</span></p>
                   <p>{'}'});</p>
