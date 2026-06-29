@@ -1,36 +1,30 @@
-import { Badge } from '@/components/ui/badge';
-
 export const metadata = {
   title: 'Trademark Policy — SecQA',
-  description: 'Trademark usage policy for SecQA brand assets.'
+  description: 'Trademark Policy for SecQA. Last updated June 2026.'
 };
 
 export default function LegalPage() {
   return (
-    <div className='flex flex-col'>
-      <section className='border-b'>
-        <div className='container mx-auto max-w-3xl px-4 py-16'>
-          <Badge variant='secondary'>Legal</Badge>
-          <h1 className='mt-4 text-4xl font-bold tracking-tight'>Trademark Policy</h1>
-          <p className='mt-2 text-sm text-muted-foreground'>Last updated: June 2026</p>
-        </div>
+    <div style={{ background: '#EEEEEE', color: '#222831', fontFamily: 'Inter, sans-serif' }}>
+      <section style={{ background: '#222831', color: '#EEEEEE', padding: '4rem 2rem', textAlign: 'center' }}>
+        <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 800, letterSpacing: '-0.02em', margin: '0 0 0.5rem' }}>Trademark Policy</h1>
+        <p style={{ fontSize: '0.85rem', color: 'rgba(238,238,238,0.5)' }}>Last updated: June 2026</p>
       </section>
-      <section>
-        <div className='container mx-auto max-w-3xl px-4 py-16'>
-        <h2 className='mt-8 text-xl font-semibold'>1. SecQA Trademarks</h2>
-        <div className='mt-3 text-sm text-muted-foreground leading-relaxed whitespace-pre-line'>SecQA, the SecQA logo, and other SecQA brand assets are trademarks of SecQA. This policy describes how third parties may use these marks.</div>
-        <h2 className='mt-8 text-xl font-semibold'>2. Permitted Use</h2>
-        <div className='mt-3 text-sm text-muted-foreground leading-relaxed whitespace-pre-line'>You may use the SecQA name and logo: (a) to refer to our Service in factual, non-defamatory ways (e.g., "we use SecQA for questionnaire automation"); (b) in comparison tables or reviews, provided the comparison is factual and not misleading; (c) in news articles or blog posts about SecQA.
-
-You may use our logo only with our written permission. To request permission, email founder@secqa.example.</div>
-        <h2 className='mt-8 text-xl font-semibold'>3. Prohibited Use</h2>
-        <div className='mt-3 text-sm text-muted-foreground leading-relaxed whitespace-pre-line'>You may not: (a) use SecQA trademarks in a way that implies endorsement, partnership, or affiliation without our written consent; (b) use SecQA trademarks as part of your own trademark or domain name; (c) modify our logo or use it in a defamatory way; (d) use SecQA trademarks in connection with illegal activities.</div>
-        <h2 className='mt-8 text-xl font-semibold'>4. Trademark Attribution</h2>
-        <div className='mt-3 text-sm text-muted-foreground leading-relaxed whitespace-pre-line'>When using SecQA trademarks, include the following attribution: "SecQA is a trademark of SecQA. All rights reserved."</div>
-        <h2 className='mt-8 text-xl font-semibold'>5. Contact</h2>
-        <div className='mt-3 text-sm text-muted-foreground leading-relaxed whitespace-pre-line'>For trademark questions or permission requests, contact founder@secqa.example.</div>
-        </div>
+      <section style={{ padding: '4rem 2rem', maxWidth: '760px', margin: '0 auto' }}>
+        <h2 style={ fontSize: '1.2rem', fontWeight: 700, marginTop: '2rem', marginBottom: '0.5rem' }>1. SecQA Trademarks</h2>
+        <p style={ fontSize: '0.9rem', color: 'rgba(238,238,238,0.7)', lineHeight: 1.7 }>SecQA, the SecQA logo, and other brand assets are trademarks of SecQA.</p>
+        <h2 style={ fontSize: '1.2rem', fontWeight: 700, marginTop: '2rem', marginBottom: '0.5rem' }>2. Permitted Use</h2>
+        <p style={ fontSize: '0.9rem', color: 'rgba(238,238,238,0.7)', lineHeight: 1.7 }>You may use SecQA name in factual references, comparison tables, news articles. Logo only with written permission.</p>
+        <h2 style={ fontSize: '1.2rem', fontWeight: 700, marginTop: '2rem', marginBottom: '0.5rem' }>3. Prohibited Use</h2>
+        <p style={ fontSize: '0.9rem', color: 'rgba(238,238,238,0.7)', lineHeight: 1.7 }>No implied endorsement, no use in your own trademark or domain, no modification, no use with illegal activities.</p>
+        <h2 style={ fontSize: '1.2rem', fontWeight: 700, marginTop: '2rem', marginBottom: '0.5rem' }>4. Attribution</h2>
+        <p style={ fontSize: '0.9rem', color: 'rgba(238,238,238,0.7)', lineHeight: 1.7 }>When using SecQA trademarks: 'SecQA is a trademark of SecQA. All rights reserved.'</p>
+        <h2 style={ fontSize: '1.2rem', fontWeight: 700, marginTop: '2rem', marginBottom: '0.5rem' }>5. Contact</h2>
+        <p style={ fontSize: '0.9rem', color: 'rgba(238,238,238,0.7)', lineHeight: 1.7 }>Trademark questions: founder@secqa.example</p>
       </section>
+      <footer style={{ background: '#222831', padding: '2rem', textAlign: 'center', fontSize: '0.8rem', color: 'rgba(238,238,238,0.4)' }}>
+        © 2026 SecQA. Security questionnaires, answered.
+      </footer>
     </div>
   );
 }
