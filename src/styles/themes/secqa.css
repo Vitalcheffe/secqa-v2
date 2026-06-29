@@ -1,0 +1,102 @@
+/* SecQA Theme — Emerald + Slate (security/trust palette) */
+/* Based on the existing theme structure but rebranded for SecQA */
+
+[data-theme='secqa'] {
+  /* Background — clean slate for trust */
+  --background: hsl(210 40% 98%);
+
+  /* Foreground — dark slate for readability */
+  --foreground: hsl(215 28% 17%);
+
+  /* Card — pure white for content surfaces */
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(215 28% 17%);
+
+  /* Popover — for dropdowns/modals */
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(215 28% 17%);
+
+  /* Primary — emerald (brand color, signals security/growth) */
+  --primary: hsl(160 84% 39%);
+  --primary-foreground: hsl(0 0% 100%);
+
+  /* Secondary — muted slate */
+  --secondary: hsl(210 40% 96%);
+  --secondary-foreground: hsl(215 28% 17%);
+
+  /* Muted — for subtle backgrounds */
+  --muted: hsl(210 40% 96%);
+  --muted-foreground: hsl(215 16% 47%);
+
+  /* Accent — light emerald for highlights */
+  --accent: hsl(160 84% 94%);
+  --accent-foreground: hsl(215 28% 17%);
+
+  /* Destructive — red for errors */
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: hsl(0 0% 100%);
+
+  /* Border — subtle slate */
+  --border: hsl(214 32% 91%);
+
+  /* Input — slightly darker border */
+  --input: hsl(214 32% 88%);
+
+  /* Ring — emerald focus ring */
+  --ring: hsl(160 84% 39%);
+
+  /* Charts — emerald family + complementary */
+  --chart-1: hsl(160 84% 39%);
+  --chart-2: hsl(200 80% 50%);
+  --chart-3: hsl(280 65% 60%);
+  --chart-4: hsl(340 75% 55%);
+  --chart-5: hsl(45 93% 47%);
+
+  /* Sidebar */
+  --sidebar: hsl(210 40% 98%);
+  --sidebar-foreground: hsl(215 28% 17%);
+  --sidebar-primary: hsl(160 84% 39%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(210 40% 96%);
+  --sidebar-accent-foreground: hsl(215 28% 17%);
+  --sidebar-border: hsl(214 32% 91%);
+  --sidebar-ring: hsl(160 84% 39%);
+
+  /* Font */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-serif: 'Georgia', serif;
+
+  /* Radius */
+  --radius: 0.5rem;
+}
+
+[data-theme='secqa'].dark {
+  --background: hsl(215 28% 9%);
+  --foreground: hsl(210 40% 98%);
+  --card: hsl(215 28% 12%);
+  --card-foreground: hsl(210 40% 98%);
+  --popover: hsl(215 28% 12%);
+  --popover-foreground: hsl(210 40% 98%);
+  --primary: hsl(160 84% 45%);
+  --primary-foreground: hsl(215 28% 9%);
+  --secondary: hsl(215 28% 17%);
+  --secondary-foreground: hsl(210 40% 98%);
+  --muted: hsl(215 28% 17%);
+  --muted-foreground: hsl(215 16% 65%);
+  --accent: hsl(160 84% 20%);
+  --accent-foreground: hsl(210 40% 98%);
+  --destructive: hsl(0 70% 50%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(215 28% 20%);
+  --input: hsl(215 28% 22%);
+  --ring: hsl(160 84% 45%);
+  --sidebar: hsl(215 28% 9%);
+  --sidebar-foreground: hsl(210 40% 98%);
+  --sidebar-primary: hsl(160 84% 45%);
+  --sidebar-primary-foreground: hsl(215 28% 9%);
+  --sidebar-accent: hsl(215 28% 17%);
+  --sidebar-accent-foreground: hsl(210 40% 98%);
+  --sidebar-border: hsl(215 28% 20%);
+  --sidebar-ring: hsl(160 84% 45%);
+}
