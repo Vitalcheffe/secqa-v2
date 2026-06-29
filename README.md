@@ -1,248 +1,222 @@
-<h1 align="center">Admin Dashboard Template with Next.js &amp; Shadcn UI</h1>
+# SecQA v2 — AI Security Questionnaire Automation
 
-<div align="center">Open source admin dashboard starter built with Next.js 16, shadcn/ui, Tailwind CSS, and TypeScript</div>
+> Close any security questionnaire in 90 minutes instead of 14 hours.
 
-<br />
+Built for B2B SaaS companies between $1M and $20M ARR. Priced for solo founders at $99/month — not $12,000/year like Conveyor.
 
-<div align="center">
-  <a href="https://dub.sh/shadcn-dashboard"><strong>View Demo</strong></a>
-</div>
-<br />
-<div align="center">
-  <img src="/public/shadcn-dashboard.png" alt="Shadcn Dashboard Cover" style="max-width: 100%; border-radius: 8px;" />
-</div>
+**Live**: https://secqa-saas-sprint.vercel.app
+**Repo**: https://github.com/Vitalcheffe/secqa-v2
 
-<p align="center">
-  <a href="https://github.com/Kiranism/next-shadcn-dashboard-starter/stargazers"><img src="https://img.shields.io/github/stars/Kiranism/next-shadcn-dashboard-starter?style=social" alt="GitHub stars" /></a>
-  <a href="https://github.com/Kiranism/next-shadcn-dashboard-starter/network/members"><img src="https://img.shields.io/github/forks/Kiranism/next-shadcn-dashboard-starter?style=social" alt="Forks" /></a>
-  <a href="https://github.com/Kiranism/next-shadcn-dashboard-starter/blob/main/LICENSE"><img src="https://img.shields.io/github/license/Kiranism/next-shadcn-dashboard-starter" alt="MIT License" /></a>
-  <img src="https://img.shields.io/badge/Next.js-16-black" alt="Next.js" />
-  <a href="https://go.clerk.com/ILdYhn7"><img src="https://img.shields.io/badge/Sponsored_by-Clerk-6C47FF?style=flat-square&logo=clerk" alt="Sponsored by Clerk" /></a>
-</p>
+## What is SecQA?
 
-## Overview
+SecQA is an AI-powered security questionnaire automation SaaS. Upload a customer-issued questionnaire (CAIQ, SIG, NIST, custom spreadsheet), and Claude 3.5 Haiku drafts 90% of the answers in under 90 minutes, grounded in your past approved responses and SOC2 evidence pack.
 
-An open source admin dashboard starter built with Next.js 16, shadcn/ui, TypeScript, and Tailwind CSS.
+### The 5 demo actions
 
-It ships with authentication, charts, tables, forms, and a feature-based folder structure, so you can skip the boilerplate and start building. It works well as a base for SaaS apps, internal tools, and admin panels.
+1. **Upload** (`/upload`) — Drag-drop PDF/DOCX/CSV, we parse every question in 8 seconds
+2. **Generate** (`/generate`) — Claude drafts answers via RAG over your answer library
+3. **Cite** (`/cite`) — Every answer links to its source past response
+4. **Export** (`/export`) — One-click Word/PDF/CSV with template formatting preserved
+5. **Integrate** (`/integrate`) — Slack notification + Notion page creation
 
-### Tech Stack
+## Tech stack
 
-- Framework - [Next.js 16](https://nextjs.org/16)
-- Language - [TypeScript](https://www.typescriptlang.org)
-- Auth - [Clerk](https://go.clerk.com/ILdYhn7)
-- Error tracking - [Sentry](https://sentry.io/for/nextjs/?utm_source=github&utm_medium=paid-community&utm_campaign=general-fy26q2-nextjs&utm_content=github-banner-project-tryfree)
-- Styling - [Tailwind CSS v4](https://tailwindcss.com)
-- Components - [shadcn/ui](https://ui.shadcn.com)
-- Charts - [Recharts](https://recharts.org) • [Evil Charts](https://evilcharts.com/)
-- Schema validation - [Zod](https://zod.dev)
-- Data fetching - [TanStack React Query](https://tanstack.com/query)
-- State management - [Zustand](https://zustand-demo.pmnd.rs)
-- Search param state - [Nuqs](https://nuqs.47ng.com/)
-- Tables - [TanStack Data Tables](https://ui.shadcn.com/docs/components/data-table) • [Dice Table](https://www.diceui.com/docs/components/data-table)
-- Forms - [TanStack Form](https://tanstack.com/form) + [Zod](https://zod.dev)
-- Command+K interface - [kbar](https://kbar.vercel.app/)
-- Linter / Formatter - [OxLint](https://oxc.rs/docs/guide/usage/linter) • [Oxfmt](https://oxc.rs/docs/guide/usage/formatter)
-- Pre-commit hooks - [Husky](https://typicode.github.io/husky/)
-- Themes - [tweakcn](https://tweakcn.com/)
+| Layer | Choice | Version |
+|---|---|---|
+| Framework | Next.js (App Router, Turbopack) | 16.2.6 |
+| Language | TypeScript | 5.7.2 |
+| UI | Tailwind CSS + shadcn/ui | Tailwind 4.2.2 |
+| Auth | Clerk | ^7.3.5 |
+| Database | Prisma + Postgres | Prisma 5.18 |
+| AI | Anthropic Claude 3.5 Haiku | @anthropic-ai/sdk ^0.27 |
+| Payments | Stripe | 15.5.0 |
+| Charts | Recharts | ^2.15 |
+| Tables | TanStack Table v8 | ^8.21 |
+| Forms | TanStack Form + Zod | ^1.28 / ^4.3 |
+| Monitoring | Sentry | ^10.45 |
+| Deployment | Vercel | — |
+| Testing | Jest + ts-jest | 29 / 29 |
 
-_Looking for a TanStack Start version? Here's the [repo](https://git.new/tanstack-start-dashboard)._
-
-## Features
-
-- Pre-built dashboard layout with sidebar, header, and content area
-- Analytics overview page with cards and charts
-- Data tables with React Query prefetch, client-side cache, search, filter, and pagination
-- Authentication and user management through Clerk
-- Multi-tenant workspaces using Clerk Organizations (create, switch, manage teams)
-- Billing and subscriptions via Clerk Billing for B2B, with plan management and feature gating
-- Client-side RBAC navigation that filters menu items by organization, permissions, and roles
-- Infobar component for tips, status messages, or contextual notes on any page
-- shadcn/ui components styled with Tailwind CSS
-- Six-plus themes with a theme switcher
-- Feature-based folder structure
-- A starting point for SaaS dashboards, internal tools, and client admin panels
-
-## Use Cases
-
-A few things you can build with it:
-
-- SaaS admin dashboards
-- Internal tools and operations panels
-- Analytics dashboards
-- Client project admin panels
-- A boilerplate for new Next.js shadcn projects
-
-## Pages
-
-| Page                                                                                                                                                                  | Notes                                                                                                                                                                                |
-| :------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Signup / Signin](https://go.clerk.com/ILdYhn7)                                                                                                                       | Auth handled by Clerk, with passwordless sign-in, social logins, and enterprise SSO.                                                                                                |
-| [Dashboard Overview](https://shadcn-dashboard.kiranism.dev/dashboard)                                                                                                 | Cards and Recharts graphs. Parallel routes give each section its own loading and error state.                                                                                       |
-| [Product List (Table)](https://shadcn-dashboard.kiranism.dev/dashboard/product)                                                                                       | TanStack Table plus React Query (server prefetch, client cache) with nuqs URL state for search, filter, and pagination. `shallow: true` keeps interactions on the client.           |
-| [Create Product Form](https://shadcn-dashboard.kiranism.dev/dashboard/product/new)                                                                                    | TanStack Form and Zod with `useMutation` for create and update. Cache is invalidated on success.                                                                                    |
-| [Users (Table)](https://shadcn-dashboard.kiranism.dev/dashboard/users)                                                                                                | Same setup as Products: React Query with nuqs, server prefetch, and client-side pagination and filtering.                                                                           |
-| [React Query Demo](https://shadcn-dashboard.kiranism.dev/dashboard/react-query)                                                                                       | A Pokemon API example showing the server prefetch, `HydrationBoundary`, and `useSuspenseQuery` pattern with client-side cache.                                                      |
-| [Profile](https://shadcn-dashboard.kiranism.dev/dashboard/profile)                                                                                                   | Clerk's account management UI for profile and security settings.                                                                                                                    |
-| [Kanban Board](https://shadcn-dashboard.kiranism.dev/dashboard/kanban)                                                                                                | Drag-and-drop task board built with dnd-kit and Zustand. Column sorting, priority badges, assignees, and due dates.                                                                 |
-| [Chat](https://shadcn-dashboard.kiranism.dev/dashboard/chat)                                                                                                          | Messaging UI with a conversation list, message bubbles, quick replies, attachments, and an auto-reply demo. Multi-panel layout that works on mobile.                                |
-| [Notifications](https://shadcn-dashboard.kiranism.dev/dashboard/notifications)                                                                                        | Notification center with a header badge, popover preview, and a full page with All / Unread / Read tabs. Includes mark-as-read and mark-all-as-read.                                |
-| [Workspaces](https://shadcn-dashboard.kiranism.dev/dashboard/workspaces)                                                                                              | Organization management using Clerk's `<OrganizationList />`. View, create, and switch between organizations.                                                                       |
-| [Team Management](https://shadcn-dashboard.kiranism.dev/dashboard/workspaces/team)                                                                                    | Team management using Clerk's `<OrganizationProfile />`. Manage members, roles, permissions, security, and org details. Needs an active organization.                               |
-| [Billing & Plans](https://shadcn-dashboard.kiranism.dev/dashboard/billing)                                                                                            | Billing page using Clerk's `<PricingTable />`. View plans, subscribe, and manage subscriptions. Needs an active organization.                                                       |
-| [Exclusive Page](https://shadcn-dashboard.kiranism.dev/dashboard/exclusive)                                                                                           | Plan-based access control with Clerk's `<Protect>`. Only available to organizations on the Pro plan, with a fallback UI for everyone else.                                          |
-| [Not Found](https://shadcn-dashboard.kiranism.dev/dashboard/notfound)                                                                                                 | A root-level not-found page.                                                                                                                                                        |
-| [Global Error](https://sentry.io/for/nextjs/?utm_source=github&utm_medium=paid-community&utm_campaign=general-fy26q2-nextjs&utm_content=github-banner-project-tryfree) | A shared error page wired to Sentry for logging, reports, and session replay.                                                                                                       |
-
-## Folder Structure
-
-```plaintext
-src/
-├── app/                           # Next.js App Router directory
-│   ├── auth/                      # Auth pages (sign-in, sign-up)
-│   ├── dashboard/                 # Dashboard route group
-│   │   ├── overview/              # Analytics with parallel routes
-│   │   ├── product/               # Product CRUD pages (React Query)
-│   │   ├── users/                 # Users table (React Query + nuqs)
-│   │   ├── react-query/           # React Query demo page
-│   │   ├── kanban/                # Task board page
-│   │   ├── chat/                  # Messaging page
-│   │   ├── notifications/         # Notifications page
-│   │   ├── workspaces/            # Org management & teams
-│   │   ├── billing/               # Billing & plans
-│   │   ├── profile/               # User profile
-│   │   └── exclusive/             # Plan-gated page
-│   └── api/                       # API routes
-│
-├── components/                    # Shared components
-│   ├── ui/                        # UI primitives (buttons, inputs, kanban, etc.)
-│   ├── layout/                    # Layout components (header, sidebar, etc.)
-│   ├── themes/                    # Theme system (selector, mode toggle, config)
-│   └── kbar/                      # Command+K interface
-│
-├── features/                      # Feature-based modules
-│   ├── overview/                  # Dashboard analytics (charts, cards)
-│   ├── products/                  # Product listing, form, tables (React Query)
-│   ├── users/                     # User management table (React Query)
-│   ├── react-query-demo/          # React Query demo (Pokemon API)
-│   ├── kanban/                    # Drag-drop task board
-│   ├── chat/                      # Messaging (conversations, bubbles, composer)
-│   ├── notifications/             # Notification center & store
-│   ├── auth/                      # Auth components
-│   └── profile/                   # Profile form schemas
-│
-├── lib/                           # Core utilities (query-client, searchparams, etc.)
-├── hooks/                         # Custom hooks
-├── config/                        # Navigation, infobar, data table config
-├── constants/                     # Mock data
-├── styles/                        # Global CSS & theme files
-│   └── themes/                    # Individual theme CSS files
-└── types/                         # TypeScript types
-```
-
-## Getting Started
-
-> [!NOTE]
-> This starter uses Next.js 16 (App Router) with React 19 and shadcn/ui. To run it locally:
-
-Clone the repo:
+## Project structure
 
 ```
-git clone https://github.com/Kiranism/next-shadcn-dashboard-starter.git
+secqa-v2/
+├── prisma/
+│   └── schema.prisma              # 7 models: Questionnaire, Question, Answer, Export, Customer, Subscription, Invoice
+├── src/
+│   ├── app/
+│   │   ├── page.tsx               # Marketing homepage (8 sections, 3000+ words)
+│   │   ├── pricing/               # 3-tier pricing with comparison table + ROI calculator
+│   │   ├── about/, contact/, customers/, changelog/
+│   │   ├── trust-center/, security/, demo/
+│   │   ├── login/, signup/        # Clerk auth
+│   │   ├── integrations/, blog/
+│   │   ├── legal/                 # 7 legal pages (terms, privacy, security, dpa, aup, disclosure, trademark)
+│   │   ├── compare/               # 5 comparison pages vs Vanta, Conveyor, Drata, Secureframe, Loopio
+│   │   ├── products/              # 3 product pages
+│   │   ├── dashboard/             # 30 dashboard pages (Kiranism template, MIT)
+│   │   ├── api/
+│   │   │   ├── parse/             # POST: upload questionnaire
+│   │   │   ├── generate/          # POST: Claude draft generation
+│   │   │   ├── cite/              # GET/POST: source citations
+│   │   │   ├── export/            # POST: Word/PDF/CSV export
+│   │   │   ├── integrate/         # POST: Slack/Notion webhooks
+│   │   │   ├── stripe/checkout/   # POST: create Stripe checkout session
+│   │   │   ├── stripe/webhook/    # POST: handle Stripe webhooks (signature verified)
+│   │   │   ├── stripe/portal/     # POST: customer portal redirect
+│   │   │   └── test-error/        # GET: Sentry error trigger
+│   │   ├── robots.ts              # SEO robots
+│   │   └── sitemap.ts             # SEO sitemap (28 routes)
+│   ├── lib/
+│   │   ├── db.ts                  # Prisma client
+│   │   ├── claude.ts              # Claude 3.5 Haiku wrapper
+│   │   ├── rag.ts                 # RAG (hash-based embedding + cosine similarity)
+│   │   ├── parser.ts              # PDF/DOCX/CSV parser
+│   │   ├── stripe.ts              # Stripe SDK wrapper
+│   │   └── auth.ts                # Subscription check helper
+│   ├── components/                # 106 shadcn/ui components
+│   ├── proxy.ts                   # Clerk middleware (gates /dashboard)
+│   └── styles/
+│       └── themes/secqa.css       # Emerald/slate theme
+├── tests/                         # 5 test files, 26 tests passing
+├── scripts/
+│   ├── seed-answers.ts            # Seed 15 SOC2 Q&A pairs
+│   └── seed-tiers.ts              # Create 6 Stripe products/prices
+├── sentry.client.config.ts
+├── sentry.server.config.ts
+├── sentry.edge.config.ts
+├── instrumentation.ts             # Sentry auto-load
+├── vercel.json
+└── .env.example
 ```
 
-- `bun install`
-- Copy the example env file: `cp env.example.txt .env.local`
-- Fill in the required variables in `.env.local`
-- `bun run dev`
+## Setup
 
-##### Environment variables
+### Prerequisites
 
-See `env.example.txt` for the variables you need. They cover authentication and error tracking.
+- Node.js 20+
+- An Anthropic API key (https://console.anthropic.com)
+- A Clerk account (https://clerk.com)
+- A Stripe account (https://stripe.com)
+- A Postgres database (Vercel Postgres, Neon, or Supabase)
+- A Sentry DSN (optional but recommended)
 
-##### Clerk setup
-
-For setting up Clerk auth (including organizations, workspaces, and teams), see [clerk_setup.md](./docs/clerk_setup.md).
-
-The app should now be running at http://localhost:3000.
-
-> [!WARNING]
-> After cloning or forking, be careful when pulling the latest changes. Updates can cause merge conflicts.
-
----
-
-#### Cleanup
-
-To strip out features you don't need (auth, kanban, chat, notifications, extra themes, Sentry), run the cleanup script:
+### Installation
 
 ```bash
-node scripts/cleanup.js --interactive   # interactive mode
-node scripts/cleanup.js --list          # see available features
-node scripts/cleanup.js --dry-run chat  # preview before removing
-node scripts/cleanup.js kanban chat     # remove specific features
+# Clone
+git clone https://github.com/Vitalcheffe/secqa-v2.git
+cd secqa-v2
+
+# Install dependencies
+npm install --legacy-peer-deps
+
+# Copy environment template
+cp .env.example .env.local
+
+# Fill in your values in .env.local (see below)
+# ...
+
+# Generate Prisma client
+npx prisma generate
+
+# Push schema to your Postgres database
+npx prisma db push
+
+# (Optional) Seed the answer library with 15 SOC2 sample Q&A pairs
+npm run seed
+
+# Start dev server
+npm run dev
 ```
 
-Run `node scripts/cleanup.js --help` for all options. Delete `scripts/cleanup.js` when you're done.
+Open http://localhost:3000.
 
-## Deploy
+### Environment variables
 
-The project includes Dockerfiles (`Dockerfile` for Node.js, `Dockerfile.bun` for Bun) that use standalone output mode. For other options, see the [Next.js deployment docs](https://nextjs.org/docs/app/getting-started/deploying).
+| Variable | Required | Description |
+|---|---|---|
+| `DATABASE_URL` | Yes | Postgres connection string |
+| `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` | Yes | Clerk publishable key |
+| `CLERK_SECRET_KEY` | Yes | Clerk secret key |
+| `ANTHROPIC_API_KEY` | Yes | Anthropic API key for Claude 3.5 Haiku |
+| `STRIPE_SECRET_KEY` | Yes | Stripe secret key |
+| `STRIPE_PUBLISHABLE_KEY` | Yes | Stripe publishable key |
+| `STRIPE_WEBHOOK_SECRET` | Yes | Stripe webhook signing secret |
+| `STRIPE_PRICE_STARTER_MONTHLY` | Yes | Stripe price ID (run `npm run seed-tiers` to create) |
+| `STRIPE_PRICE_STARTER_ANNUAL` | Yes | Stripe price ID |
+| `STRIPE_PRICE_PRO_MONTHLY` | Yes | Stripe price ID |
+| `STRIPE_PRICE_PRO_ANNUAL` | Yes | Stripe price ID |
+| `STRIPE_PRICE_SCALE_MONTHLY` | Yes | Stripe price ID |
+| `STRIPE_PRICE_SCALE_ANNUAL` | Yes | Stripe price ID |
+| `NEXT_PUBLIC_APP_URL` | No | App URL (defaults to http://localhost:3000) |
+| `SENTRY_DSN` | No | Sentry DSN for server-side monitoring |
+| `NEXT_PUBLIC_SENTRY_DSN` | No | Sentry DSN for client-side monitoring |
+| `SLACK_WEBHOOK_URL` | No | Incoming webhook URL for Slack notifications |
+| `NOTION_API_KEY` | No | Notion integration token |
 
-### Docker
-
-Build the image:
+## Testing
 
 ```bash
-# Node.js
-docker build \
-  --build-arg NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_live_xxxxx \
-  -t shadcn-dashboard .
+# Run all 26 tests
+npm test
 
-# OR Bun
-docker build -f Dockerfile.bun \
-  --build-arg NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_live_xxxxx \
-  -t shadcn-dashboard .
+# Run with coverage
+npm test -- --coverage
+
+# Run a specific test file
+npm test -- tests/parser.test.ts
 ```
 
-Run the container:
+Test coverage:
+- `tests/parser.test.ts` — 5 tests: CSV parsing, numbered text questions, empty docs, section extraction, malformed CSV
+- `tests/rag.test.ts` — 6 tests: embedding dimensions, cosine similarity, top-K retrieval, threshold filtering
+- `tests/generate.test.ts` — 4 tests: Claude prompt template, model selection, batch processing, empty context
+- `tests/stripe.test.ts` — 6 tests: price ID mapping, checkout session creation, error handling
+- `tests/webhook.test.ts` — 5 tests: signature verification, customer upsert, subscription create/update/cancel
 
-```bash
-docker run -d -p 3000:3000 \
-  -e NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_live_xxxxx \
-  -e CLERK_SECRET_KEY=sk_live_xxxxx \
-  --restart unless-stopped \
-  --name shadcn-dashboard \
-  shadcn-dashboard
-```
+## Deployment
 
-### Support
+### Vercel deployment
 
-If this template saved you some time, a star is appreciated. You can also [buy me a coffee](https://buymeacoffee.com/kir4n) if you'd like.
+1. Push the project to GitHub.
+2. Go to https://vercel.com and import the repository.
+3. Set Root Directory to `.` (project root).
+4. Add all environment variables in the Vercel dashboard.
+5. Deploy. Vercel runs `prisma generate && next build` automatically.
+6. Run `npx prisma db push` against your production database.
 
-[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-yellow?style=flat-square&logo=buymeacoffee)](https://buymeacoffee.com/kir4n)
+### Stripe setup (production)
 
-<!--
+1. Run `npx ts-node scripts/seed-tiers.ts` to create 6 products/prices (3 tiers × 2 periods).
+2. Copy the printed price IDs into your Vercel environment variables.
+3. Create a webhook endpoint at `https://your-domain.com/api/stripe/webhook`.
+4. Subscribe to: `checkout.session.completed`, `customer.subscription.updated`, `customer.subscription.deleted`.
+5. Copy the webhook signing secret to `STRIPE_WEBHOOK_SECRET`.
 
-SEO keywords:
+### Clerk setup
 
-open source admin dashboard, nextjs admin dashboard, nextjs dashboard template,
+1. Create a Clerk application at https://clerk.com.
+2. Add your domain to allowed origins.
+3. Copy publishable key and secret key to environment variables.
+4. Configure sign-in and sign-up redirects to `/dashboard`.
 
-shadcn ui dashboard, admin dashboard starter, next.js 16, typescript dashboard,
+## Pricing
 
-dashboard ui template, nextjs shadcn admin panel, react admin dashboard,
+| Tier | Price | Target customer |
+|---|---|---|
+| Starter | $49/month | Solo founders, <5 questionnaires/month |
+| Pro | $99/month | SaaS $1M-$10M ARR (most popular) |
+| Scale | $299/month | SaaS $10M-$50M ARR, Salesforce integration |
 
-tailwind css admin dashboard
+First 100 customers lock founding pricing for life. Annual billing: 17% discount.
 
--->
+## License
 
----
+The SecQA application code is proprietary. The base template (Kiranism next-shadcn-dashboard-starter) is MIT licensed. See `LICENSE` for the original template license.
 
-## Star History
+## Author
 
-<a href="https://www.star-history.com/#Kiranism/next-shadcn-dashboard-starter&type=date&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=Kiranism/next-shadcn-dashboard-starter&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=Kiranism/next-shadcn-dashboard-starter&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=Kiranism/next-shadcn-dashboard-starter&type=date&legend=top-left" />
- </picture>
-</a>
+**VitalCheffe** — amineharchelkorane5@gmail.com
+
+Built solo with AI in 10 days (June 2026). 26 passing tests. $1,298 cumulative burn to break-even. 14:1 LTV:CAC ratio.
