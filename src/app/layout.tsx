@@ -31,12 +31,25 @@ export const metadata: Metadata = {
     'Vanta alternative',
     'Conveyor alternative'
   ],
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg'
+  },
+  manifest: '/manifest.json',
   openGraph: {
     title: 'SecQA — Close security questionnaires in 90 minutes',
     description:
       'AI-powered answer drafting grounded in your past responses and SOC2 evidence. $99/mo for SaaS companies $1M-$20M ARR.',
     type: 'website',
-    url: 'https://secqa-saas-sprint.vercel.app'
+    url: 'https://secqa-saas-sprint.vercel.app',
+    siteName: 'SecQA'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SecQA — Close security questionnaires in 90 minutes',
+    description:
+      'AI-powered answer drafting grounded in your past responses and SOC2 evidence. $99/mo for SaaS companies $1M-$20M ARR.'
   }
 };
 

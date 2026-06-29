@@ -1,0 +1,17 @@
+{
+  "name": "SecQA — AI Security Questionnaire Automation",
+  "short_name": "SecQA",
+  "description": "Close any security questionnaire in 90 minutes instead of 14 hours.",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#10b981",
+  "background_color": "#f8fafc",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
+}
