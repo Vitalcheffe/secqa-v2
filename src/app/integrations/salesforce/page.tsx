@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 
 export const metadata = {
   title: 'Salesforce Integration — SecQA',
-  description: 'Same as HubSpot but for Salesforce. Available on Scale tier only.'
+  description: 'Salesforce integration. Scale tier only.'
 };
 
 export default function SalesforceIntegrationPage() {
@@ -24,27 +24,27 @@ export default function SalesforceIntegrationPage() {
       <section style={{ background: '#222831', color: '#EEEEEE', padding: '5rem 2rem', textAlign: 'center' }}>
         <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>☁️</div>
         <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 800, letterSpacing: '-0.02em', margin: '0 0 0.5rem' }}>Salesforce + SecQA</h1>
-        <p style={{ fontSize: '1.1rem', color: 'rgba(238,238,238,0.7)', maxWidth: '600px', margin: '0 auto 2rem', lineHeight: 1.6 }}>Same as HubSpot but for Salesforce. Available on Scale tier only.</p>
+        <p style={{ fontSize: '1.1rem', color: 'rgba(238,238,238,0.7)', maxWidth: '600px', margin: '0 auto 2rem', lineHeight: 1.6 }}>Salesforce integration. Scale tier only.</p>
         <Link href='/pricing' style={{ background: '#00ADB5', color: '#EEEEEE', padding: '0.7rem 1.6rem', borderRadius: '6px', textDecoration: 'none', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>Get started <ArrowRight size={16} /></Link>
       </section>
       <section style={{ padding: '4rem 2rem', maxWidth: '760px', margin: '0 auto' }}>
         <h2 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: '1.5rem' }}>Features</h2>
         <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-          <li style={ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)' }><span style={ color: '#00ADB5' }>&#10003;</span><span>Auto-attach questionnaire to opportunity</span></li>
-          <li style={ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)' }><span style={ color: '#00ADB5' }>&#10003;</span><span>Status sync with custom fields</span></li>
-          <li style={ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)' }><span style={ color: '#00ADB5' }>&#10003;</span><span>Opportunity stage gate</span></li>
-          <li style={ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)' }><span style={ color: '#00ADB5' }>&#10003;</span><span>Activity history logging</span></li>
+          <li style={{ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)' }}><span style={{ color: '#00ADB5' }}>&#10003;</span><span>Auto-attach to opportunity</span></li>
+          <li style={{ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)' }}><span style={{ color: '#00ADB5' }}>&#10003;</span><span>Status sync</span></li>
+          <li style={{ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)' }}><span style={{ color: '#00ADB5' }}>&#10003;</span><span>Stage gate</span></li>
+          <li style={{ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)' }}><span style={{ color: '#00ADB5' }}>&#10003;</span><span>Activity history</span></li>
         </ul>
       </section>
       <section style={{ background: '#222831', color: '#EEEEEE', padding: '4rem 2rem' }}>
         <div style={{ maxWidth: '760px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: '1.5rem' }}>Setup</h2>
           <ol style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <li style={ display: 'flex', gap: '0.8rem', alignItems: 'start' }><span style={ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(0,173,181,0.2)', color: '#00ADB5', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700, flexShrink: 0 }>1</span><span style={ fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)', paddingTop: '0.2rem' }>Create a connected app in Salesforce Setup</span></li>
-          <li style={ display: 'flex', gap: '0.8rem', alignItems: 'start' }><span style={ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(0,173,181,0.2)', color: '#00ADB5', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700, flexShrink: 0 }>2</span><span style={ fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)', paddingTop: '0.2rem' }>Configure OAuth 2.0 with REST API scopes</span></li>
-          <li style={ display: 'flex', gap: '0.8rem', alignItems: 'start' }><span style={ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(0,173,181,0.2)', color: '#00ADB5', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700, flexShrink: 0 }>3</span><span style={ fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)', paddingTop: '0.2rem' }>Copy consumer key and secret</span></li>
-          <li style={ display: 'flex', gap: '0.8rem', alignItems: 'start' }><span style={ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(0,173,181,0.2)', color: '#00ADB5', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700, flexShrink: 0 }>4</span><span style={ fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)', paddingTop: '0.2rem' }>Add to SecQA dashboard, Integrations, Salesforce</span></li>
-          <li style={ display: 'flex', gap: '0.8rem', alignItems: 'start' }><span style={ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(0,173,181,0.2)', color: '#00ADB5', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700, flexShrink: 0 }>5</span><span style={ fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)', paddingTop: '0.2rem' }>Map questionnaire status to opportunity stages</span></li>
+          <li style={{ display: 'flex', gap: '0.8rem', alignItems: 'start' }}><span style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(0,173,181,0.2)', color: '#00ADB5', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700, flexShrink: 0 }}>1</span><span style={{ fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)', paddingTop: '0.2rem' }}>Create connected app</span></li>
+          <li style={{ display: 'flex', gap: '0.8rem', alignItems: 'start' }}><span style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(0,173,181,0.2)', color: '#00ADB5', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700, flexShrink: 0 }}>2</span><span style={{ fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)', paddingTop: '0.2rem' }}>Configure OAuth</span></li>
+          <li style={{ display: 'flex', gap: '0.8rem', alignItems: 'start' }}><span style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(0,173,181,0.2)', color: '#00ADB5', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700, flexShrink: 0 }}>3</span><span style={{ fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)', paddingTop: '0.2rem' }}>Copy credentials</span></li>
+          <li style={{ display: 'flex', gap: '0.8rem', alignItems: 'start' }}><span style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(0,173,181,0.2)', color: '#00ADB5', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700, flexShrink: 0 }}>4</span><span style={{ fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)', paddingTop: '0.2rem' }}>Add to SecQA</span></li>
+          <li style={{ display: 'flex', gap: '0.8rem', alignItems: 'start' }}><span style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(0,173,181,0.2)', color: '#00ADB5', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700, flexShrink: 0 }}>5</span><span style={{ fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)', paddingTop: '0.2rem' }}>Map stages</span></li>
           </ol>
         </div>
       </section>

@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 
 export const metadata = {
   title: 'Stripe Integration — SecQA',
-  description: 'SecQA uses Stripe for billing.'
+  description: 'Billing via Stripe.'
 };
 
 export default function StripeIntegrationPage() {
@@ -24,25 +24,24 @@ export default function StripeIntegrationPage() {
       <section style={{ background: '#222831', color: '#EEEEEE', padding: '5rem 2rem', textAlign: 'center' }}>
         <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>💳</div>
         <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 800, letterSpacing: '-0.02em', margin: '0 0 0.5rem' }}>Stripe + SecQA</h1>
-        <p style={{ fontSize: '1.1rem', color: 'rgba(238,238,238,0.7)', maxWidth: '600px', margin: '0 auto 2rem', lineHeight: 1.6 }}>SecQA uses Stripe for billing.</p>
+        <p style={{ fontSize: '1.1rem', color: 'rgba(238,238,238,0.7)', maxWidth: '600px', margin: '0 auto 2rem', lineHeight: 1.6 }}>Billing via Stripe.</p>
         <Link href='/pricing' style={{ background: '#00ADB5', color: '#EEEEEE', padding: '0.7rem 1.6rem', borderRadius: '6px', textDecoration: 'none', fontWeight: 600, display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>Get started <ArrowRight size={16} /></Link>
       </section>
       <section style={{ padding: '4rem 2rem', maxWidth: '760px', margin: '0 auto' }}>
         <h2 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: '1.5rem' }}>Features</h2>
         <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-          <li style={ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)' }><span style={ color: '#00ADB5' }>&#10003;</span><span>Subscription management</span></li>
-          <li style={ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)' }><span style={ color: '#00ADB5' }>&#10003;</span><span>Invoice history</span></li>
-          <li style={ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)' }><span style={ color: '#00ADB5' }>&#10003;</span><span>Payment method updates</span></li>
-          <li style={ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)' }><span style={ color: '#00ADB5' }>&#10003;</span><span>Customer portal access</span></li>
+          <li style={{ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)' }}><span style={{ color: '#00ADB5' }}>&#10003;</span><span>Subscription management</span></li>
+          <li style={{ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)' }}><span style={{ color: '#00ADB5' }}>&#10003;</span><span>Invoice history</span></li>
+          <li style={{ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)' }}><span style={{ color: '#00ADB5' }}>&#10003;</span><span>Payment updates</span></li>
+          <li style={{ display: 'flex', gap: '0.5rem', fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)' }}><span style={{ color: '#00ADB5' }}>&#10003;</span><span>Customer portal</span></li>
         </ul>
       </section>
       <section style={{ background: '#222831', color: '#EEEEEE', padding: '4rem 2rem' }}>
         <div style={{ maxWidth: '760px', margin: '0 auto' }}>
           <h2 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: '1.5rem' }}>Setup</h2>
           <ol style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-          <li style={ display: 'flex', gap: '0.8rem', alignItems: 'start' }><span style={ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(0,173,181,0.2)', color: '#00ADB5', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700, flexShrink: 0 }>1</span><span style={ fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)', paddingTop: '0.2rem' }>SecQA handles Stripe setup automatically</span></li>
-          <li style={ display: 'flex', gap: '0.8rem', alignItems: 'start' }><span style={ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(0,173,181,0.2)', color: '#00ADB5', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700, flexShrink: 0 }>2</span><span style={ fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)', paddingTop: '0.2rem' }>Access the customer portal from your dashboard</span></li>
-          <li style={ display: 'flex', gap: '0.8rem', alignItems: 'start' }><span style={ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(0,173,181,0.2)', color: '#00ADB5', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700, flexShrink: 0 }>3</span><span style={ fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)', paddingTop: '0.2rem' }>Manage billing at /dashboard/billing</span></li>
+          <li style={{ display: 'flex', gap: '0.8rem', alignItems: 'start' }}><span style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(0,173,181,0.2)', color: '#00ADB5', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700, flexShrink: 0 }}>1</span><span style={{ fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)', paddingTop: '0.2rem' }}>SecQA handles setup</span></li>
+          <li style={{ display: 'flex', gap: '0.8rem', alignItems: 'start' }}><span style={{ width: '24px', height: '24px', borderRadius: '50%', background: 'rgba(0,173,181,0.2)', color: '#00ADB5', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', fontWeight: 700, flexShrink: 0 }}>2</span><span style={{ fontSize: '0.9rem', color: 'rgba(238,238,238,0.8)', paddingTop: '0.2rem' }}>Access portal from dashboard</span></li>
           </ol>
         </div>
       </section>
